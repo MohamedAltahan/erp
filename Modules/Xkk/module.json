@@ -1,0 +1,11 @@
+{
+    "name": "Xkk",
+    "alias": "xkk",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Xkk\\Providers\\XkkServiceProvider"
+    ],
+    "files": []
+}
