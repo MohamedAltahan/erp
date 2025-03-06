@@ -1,12 +1,12 @@
 <?php
 
-namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Models;
+namespace Modules\Auth\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use $MODULE_NAMESPACE$\$MODULE$\Database\Factories\$NAME$Factory;
+// use Modules\Auth\Database\Factories\AuthFactory;
 
-class $STUDLY_NAME$ extends Model
+class Auth extends Model
 {
     use HasFactory;
 

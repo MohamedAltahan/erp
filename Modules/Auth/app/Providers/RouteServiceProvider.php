@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Employee\Providers;
+namespace Modules\Auth\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected string $name = 'Employee';
+    protected string $name = 'Auth';
 
     /**
      * Called before routes are registered.
@@ -25,6 +25,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map(): void
     {
         $this->mapApiRoutes();
+        // $this->mapWebRoutes();
     }
 
     /**
@@ -34,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes(): void
     {
-        Route::middleware('web')->group(module_path($this->name, '/routes/web.php'));
+        Route::middleware('web')->group(module_path($this->name, '/Routes/web.php'));
     }
 
     /**

@@ -1,16 +1,16 @@
 <?php
 
-namespace $CLASS_NAMESPACE$;
+namespace Modules\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class $CLASS$ extends Controller
+class AuthController extends Controller
 {
 
     public function index()
     {
-        ///
+        dd('index');
     }
 
     public function store(Request $request)
@@ -20,7 +20,7 @@ class $CLASS$ extends Controller
 
     public function show($id)
     {
-       ///
+        ///
     }
 
     public function update(Request $request, $id)
