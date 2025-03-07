@@ -41,6 +41,7 @@ return [
         ],
         'replacements' => [
             'model' => ['STUDLY_NAME', 'MODULE_NAMESPACE'],
+            'request' => ['STUDLY_NAME', 'MODULE_NAMESPACE'],
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME', 'KEBAB_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
             'routes/api' => ['LOWER_NAME', 'STUDLY_NAME', 'KEBAB_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
             'vite' => ['LOWER_NAME', 'STUDLY_NAME', 'KEBAB_NAME'],

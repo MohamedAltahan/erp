@@ -3,12 +3,11 @@
 namespace $NAMESPACE$;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Modules\Common\Http\Requests\ApiRequest
 
-class $CLASS$ extends FormRequest
+class $CLASS$ extends ApiRequest
 {
-    /**
-     * Get the validation rules that apply to the request.
-     */
+
     public function rules(): array
     {
         return [
@@ -16,11 +15,4 @@ class $CLASS$ extends FormRequest
         ];
     }
 
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return true;
-    }
 }
