@@ -1,4 +1,5 @@
 {
+    "Auth": true,
     "Sidebar": true,
     "Settings": true,
     "Employee": true,

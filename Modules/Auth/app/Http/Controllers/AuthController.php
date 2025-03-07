@@ -4,13 +4,14 @@ namespace Modules\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Modules\Auth\Http\Requests\AuthRequest;
 
 class AuthController extends Controller
 {
 
-    public function register(Request $request)
+    public function register(AuthRequest $request)
     {
-        dd('index');
+        dd('indexd');
     }
 
     public function store(Request $request)

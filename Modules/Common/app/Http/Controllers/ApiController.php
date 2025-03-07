@@ -3,7 +3,7 @@
 namespace Modules\Common\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Modules\Common\app\Trait\ApiResponse;
+use Modules\Common\Traits\ApiResponse;
 
 class ApiController extends Controller
 {
