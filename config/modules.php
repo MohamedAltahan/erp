@@ -150,12 +150,12 @@ return [
             'config' => ['path' => 'config', 'generate' => true],
 
             // database/
-            'factory' => ['path' => 'database/factories', 'generate' => true],
-            'migration' => ['path' => 'database/migrations', 'generate' => true],
-            'seeder' => ['path' => 'database/seeders', 'generate' => true],
+            'factory' => ['path' => 'database/factories', 'generate' => false],
+            'migration' => ['path' => 'database/migrations', 'generate' => false],
+            'seeder' => ['path' => 'database/seeders', 'generate' => false],
 
             // lang/
-            'lang' => ['path' => 'lang', 'generate' => true],
+            'lang' => ['path' => 'lang', 'generate' => false],
 
             // resource/
             'assets' => ['path' => 'resources/assets', 'generate' => false],
@@ -189,7 +189,7 @@ return [
         | This option for register migration automatically.
         |
         */
-        'migrations' => true,
+        'migrations' => false,
 
         /*
         |--------------------------------------------------------------------------

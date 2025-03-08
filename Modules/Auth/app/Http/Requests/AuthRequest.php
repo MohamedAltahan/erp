@@ -10,8 +10,8 @@ class AuthRequest extends ApiRequest
     {
         return [
             'name' => 'required|string|max:50',
-            'username' => 'required|string|max:20|unique:users,username',
-            'password' => 'required',
+            'username' => 'required|string|max:20|unique:employees,username',
+            'password' => 'required|string|min:2',
             'branch_id' => 'required|exists:branches,id',
         ];
     }
