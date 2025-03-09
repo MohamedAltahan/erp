@@ -2,28 +2,33 @@
 
 namespace Modules\Employee\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Modules\Common\Enums\EmployeeRoleEnum;
-use Illuminate\Database\Eloquent\Casts\AsPassword;
+
 // use Modules\Employee\Database\Factories\EmployeeFactory;
 
-class Employee extends Model
+class Employee extends Authenticatable
 {
-    use HasFactory;
+    use HasApiTokens, Notifiable;
 
     protected $fillable = [
-        'name',
+        'name_ar',
+        'name_en',
         'username',
         'branch_id',
         'phone',
         'email',
         'password',
         'address',
-        'role'
+        'role',
     ];
 
     protected $casts = [
         'role' => EmployeeRoleEnum::class,
+        'address' => 'array',
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
 }

@@ -2,40 +2,46 @@
 
 namespace Modules\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
-use Modules\Auth\Http\Requests\AuthRequest;
-use Modules\Employee\Models\Employee;
+use Modules\Auth\Http\Requests\LoginRequest;
+use Modules\Auth\Http\Requests\RegisterRequest;
+use Modules\Auth\Services\AuthService;
+use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
+use Modules\Employee\Http\Resources\EmployeeResource;
 
-class AuthController extends Controller
+class AuthController extends ApiController
 {
+    use ApiResponse;
 
-    public function register(AuthRequest $request)
+    public function login(LoginRequest $request, AuthService $authService)
     {
-        $request['password'] = bcrypt($request->password);
-        dd($request->all());
-        $user = Employee::create([
-            request()->all()
-        ]);
+        $user = $authService->login($request);
+
+        if (! $user) {
+            return $this->sendResponse(
+                [],
+                __('Invalid username or password'),
+                StatusCodeEnum::Unauthorized->value
+            );
+        }
+
+        return $this->sendResponse(
+            [
+                'user' => EmployeeResource::make($user),
+                'token' => $user->createToken('auth_token')->plainTextToken,
+            ],
+            __('Loged in successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
-    public function store(Request $request)
+    public function logout(Request $request)
     {
-        ///
-    }
+        $request->user()->currentAccessToken()->delete();
 
-    public function show($id)
-    {
-        ///
-    }
-
-    public function update(Request $request, $id)
-    {
-        ///
-    }
-
-    public function destroy($id)
-    {
-        ///
+        return $this->sendResponse([], __('Loged out successfully'), StatusCodeEnum::Success->value);
     }
 }

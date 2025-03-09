@@ -22,6 +22,7 @@ class SetLanguage
         if (in_array($locale, $allowedLocales)) {
             App::setLocale($locale);
         }
+
         return $next($request);
     }
 }

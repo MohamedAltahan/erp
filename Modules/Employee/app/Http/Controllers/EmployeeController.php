@@ -5,61 +5,28 @@ namespace Modules\Employee\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller
+use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
+use Modules\Employee\Http\Requests\EmployeeRequest;
+use Modules\Employee\Models\Employee;
+use Modules\Employee\Services\EmployeeService;
+
+class EmployeeController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     */
+    use ApiResponse;
+
     public function index()
     {
-        return view('employee::index');
+        $employees = Employee::paginate($this->perPage);
+
+        return $this->sendResponse([], 'Data fetched successfully', StatusCodeEnum::Success->value);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store(EmployeeRequest $request, EmployeeService $employeeService)
     {
-        return view('employee::create');
-    }
+        $employeeService->create($request);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
-    {
-        return view('employee::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        return view('employee::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        //
+        return $this->sendResponse([], __('Data created successfully'), StatusCodeEnum::Created_successfully->value);
     }
 }

@@ -14,16 +14,18 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name_ar')->nullable();
+            $table->string('name_en')->nullable();
             $table->unsignedInteger('branch_id');
             $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade')->onUpdate('cascade');
             $table->string('username')->unique();
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
             $table->unsignedTinyInteger('role')->default(EmployeeRoleEnum::Employee);
-            $table->string('address')->nullable();
+            $table->json('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->text('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();

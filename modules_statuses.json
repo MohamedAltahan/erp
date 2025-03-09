@@ -4,6 +4,6 @@
     "Settings": true,
     "Employee": true,
     "Permission": true,
-    "Common": true,
+    "Common": false,
     "Branch": true
 }

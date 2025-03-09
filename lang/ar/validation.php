@@ -118,7 +118,6 @@ return [
     'the provided :attribute must be different from the current financial equation ID' => 'لا يمكن اضافة المعادلة داخل نفسها',
     'discount_amount must be less than the product of quantity and price.' => 'قيمة الخصم للمنتج يجب أن يكون أقل من حاصل ضرب الكمية والسعر.',
 
-
     /*
   |--------------------------------------------------------------------------
   | Custom Validation Language Lines
@@ -183,10 +182,10 @@ return [
         'treasury_account' => 'حساب الخزينة',
         'is_active' => 'حالة التفعيل',
         'applications_section_image' => 'صورة القسم',
-        "choose_daily_date" => "اختار التاريخ",
-        "is_default" => "القيمة الافتراضية",
-        "name.ar" => "الإسم بالعربية",
-        "name.en" => "الإسم بالأنجليزية",
+        'choose_daily_date' => 'اختار التاريخ',
+        'is_default' => 'القيمة الافتراضية',
+        'name.ar' => 'الإسم بالعربية',
+        'name.en' => 'الإسم بالأنجليزية',
         'invoice_serial' => 'رقم الفاتورة',
         'phone' => 'رقم الجوال',
         'address' => 'العنوان',
@@ -485,8 +484,7 @@ return [
 
     'cannot_delete_parent' => 'لا يمكنك حذف الحساب الرئيسي لأنه يحتوي على حسابات فرعية.',
 
-
     'package' => [
         'unique_within_package' => 'هذه الميزة مضافة بالفعل إلى الحزمة، لا يمكن تكرارها.',
-    ]
+    ],
 ];

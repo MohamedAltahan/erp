@@ -9,13 +9,13 @@ use Modules\Employee\Models\Employee;
 
 class EmployeeDatabaseSeeder extends Seeder
 {
-
     public function run(): void
     {
         Employee::create([
             'id' => 1,
-            'name' => 'Admin',
+            'name_ar' => 'محمد',
             'username' => 'admin',
+            'name_en' => null,
             'branch_id' => 1,
             'role' => EmployeeRoleEnum::Admin,
             'email' => 'admin@example.com',

@@ -1,0 +1,10 @@
+{
+    "Data created successfully": "تم إنشاء البيانات بنجاح",
+    "Data updated successfully": "تم تحديث البيانات بنجاح",
+    "Data deleted successfully": "تم حذف البيانات بنجاح",
+    "Data not found": "البيانات غير موجودة",
+    "Error occurred": "حدث خطأ",
+    "Loged in successfully": "تم تسجيل الدخول بنجاح",
+    "Loged out successfully": "تم تسجيل الخروج بنجاح",
+    "Invalid username or password": "إسم المستخدم أو كلمة المرور غير صحيحة"
+}

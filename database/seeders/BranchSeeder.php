@@ -3,13 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Modules\Branch\Models\Branch;
-use Modules\Common\Enums\EmployeeRoleEnum;
 
 class BranchSeeder extends Seeder
 {
-
     public function run(): void
     {
         Branch::create([

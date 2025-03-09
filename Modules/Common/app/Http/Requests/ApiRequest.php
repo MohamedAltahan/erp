@@ -11,10 +11,11 @@ use Modules\Common\Traits\ApiResponse;
 abstract class ApiRequest extends FormRequest
 {
     use ApiResponse;
+
     /**
      * Get the validation rules that apply to the request.
      */
-    abstract  public function rules(): array;
+    abstract public function rules(): array;
 
     /**
      * Determine if the user is authorized to make this request.
@@ -33,7 +34,7 @@ abstract class ApiRequest extends FormRequest
             $response = $this->sendResponse(
                 $validator->errors()->toArray(),
                 $validator->errors()->first(),
-                StatusCodeEnum::Unprocessable_content
+                StatusCodeEnum::Unprocessable_content->value
             );
             throw new ValidationException($validator, $response);
         }
