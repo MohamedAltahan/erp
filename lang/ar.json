@@ -6,5 +6,6 @@
     "Error occurred": "حدث خطأ",
     "Loged in successfully": "تم تسجيل الدخول بنجاح",
     "Loged out successfully": "تم تسجيل الخروج بنجاح",
-    "Invalid username or password": "إسم المستخدم أو كلمة المرور غير صحيحة"
+    "Invalid username or password": "إسم المستخدم أو كلمة المرور غير صحيحة",
+    "Data fetched successfully": "تم جلب البيانات بنجاح"
 }

@@ -8,16 +8,17 @@ use Illuminate\Pagination\AbstractPaginator;
 trait HasPagination
 {
 
+
     public static function paginate($resource): ResourceCollection
     {
-        if (!($resource instanceof AbstractPaginator)) {
+        if (! ($resource instanceof AbstractPaginator)) {
             return self::collection($resource);
         }
+        return new class($resource, self::class) extends ResourceCollection {
 
-        return new class($resource) extends ResourceCollection {
-
-            public function __construct($resource)
+            public function __construct($resource, string $collects)
             {
+                $this->collects = $collects;
                 parent::__construct($resource);
             }
 
@@ -25,7 +26,7 @@ trait HasPagination
             {
                 return [
                     'data' => $this->collection,
-                    'pagination' => [
+                    'paginate' => [
                         'count' => $this->count(),
                         'total' => $this->total(),
                         'per_page' => $this->perPage(),

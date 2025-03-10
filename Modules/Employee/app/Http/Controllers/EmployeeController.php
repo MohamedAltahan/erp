@@ -23,7 +23,7 @@ class EmployeeController extends ApiController
 
         return $this->sendResponse(
             EmployeeResource::paginate($employees),
-            'Data fetched successfully',
+            __('Data fetched successfully'),
             StatusCodeEnum::Success->value
         );
     }
