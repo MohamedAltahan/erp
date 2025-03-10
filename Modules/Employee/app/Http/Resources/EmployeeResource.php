@@ -4,9 +4,11 @@ namespace Modules\Employee\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Modules\Common\Traits\HasPagination;
 
 class EmployeeResource extends JsonResource
 {
+    use HasPagination;
     /**
      * Transform the resource into an array.
      *
