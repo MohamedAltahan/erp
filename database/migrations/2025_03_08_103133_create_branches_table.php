@@ -13,14 +13,12 @@ return new class extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Name_ar')->nullable();
-            $table->string('Name_en')->nullable();
-            $table->json('Description')->nullable();
-            $table->json('Address')->nullable();
-            $table->json('note')->nullable();
-            $table->string('Phone')->nullable();
+            $table->json('name');
+            $table->json('description')->nullable();
+            $table->json('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->boolean('status')->default(true);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('deleted_at')->nullable();
         });
     }
 

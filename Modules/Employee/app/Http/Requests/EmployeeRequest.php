@@ -13,18 +13,19 @@ class EmployeeRequest extends ApiRequest
         $employee = $this->route('employee');
 
         return [
-            'name_ar' => [
-                'nullable',
-                Rule::requiredIf($this->input('name_en') == null),
-                'string',
-                'max:50',
-            ],
-            'name_en' => [
-                'nullable',
-                Rule::requiredIf($this->input('name_ar') == null),
-                'string',
-                'max:50',
-            ],
+            'name' => ['required', 'array', 'max:255'],
+            // 'name_ar' => [
+            //     'nullable',
+            //     Rule::requiredIf($this->input('name_en') == null),
+            //     'string',
+            //     'max:50',
+            // ],
+            // 'name_en' => [
+            //     'nullable',
+            //     Rule::requiredIf($this->input('name_ar') == null),
+            //     'string',
+            //     'max:50',
+            // ],
             'password' => 'required|string|min:2',
             'phone' => ['required', 'string', 'max:20', Rule::unique('employees', 'phone')->ignore($employee)],
             'username' => ['required', 'string', 'max:20', Rule::unique('employees', 'username')->ignore($employee)],
@@ -33,6 +34,7 @@ class EmployeeRequest extends ApiRequest
             'role' => ['required', Rule::in(EmployeeRoleEnum::cases())],
             'address' => 'nullable|array|max:300',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:3000',
+            'status' => 'boolean', // if not entered it will be true
         ];
     }
 }

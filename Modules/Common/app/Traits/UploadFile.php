@@ -15,8 +15,8 @@ trait UploadFile
         if ($file = request()->file($inputName)) {
             if (str_starts_with($file->getMimeType(), 'image/')) {
 
-                $filename = Str::random(12) . '.' . $file->getClientOriginalExtension();
-                $destinationPath = storage_path('app/public/' . $folderName);
+                $filename = Str::random(12).'.'.$file->getClientOriginalExtension();
+                $destinationPath = storage_path('app/public/'.$folderName);
                 $manager = new ImageManager(new Driver);
                 $image = $manager->read($file->getPathname());
                 if (! file_exists($destinationPath)) {
@@ -26,9 +26,9 @@ trait UploadFile
                     // $constraint->aspectRatio();
                     $constraint->upsize();
                 });
-                $image->save($destinationPath . '/' . $filename);
+                $image->save($destinationPath.'/'.$filename);
 
-                return $folderName . '/' . $filename;
+                return $folderName.'/'.$filename;
             } else {
 
                 $path = $file->store($folderName, ['disk' => $diskName]);
@@ -40,7 +40,7 @@ trait UploadFile
 
     public function fileUpdate(string $inputName, string $folderName, string $diskName = 'public', ?string $oldFileName = null, int $imageHeight = 1080)
     {
-        $path =  $this->uploadFile($inputName, $folderName, $diskName, $imageHeight);
+        $path = $this->uploadFile($inputName, $folderName, $diskName, $imageHeight);
 
         // delete the old file from storage
         if (($oldFileName != null) && (Storage::disk($diskName)->exists($oldFileName))) {

@@ -2,25 +2,21 @@
 
 namespace Modules\Branch\Services;
 
-use Modules\Common\Enums\ImageQuality;
-use Modules\Common\Traits\UploadFile;
-use Modules\Employee\Http\Requests\EmployeeRequest;
-use Modules\Employee\Models\Employee;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Modules\Branch\Models\Branch;
 
 class BranchService
 {
-
-    public function create(EmployeeRequest $request)
+    public function create(Request $request, Model $model)
     {
-        $employeeData = $request->validated();
-        $employeeData['avatar'] = $this->uploadFile('avatar', 'avatar', 'public', ImageQuality::Low->value);
-        Employee::create($employeeData);
+        $Data = $request->validated();
+        $model::create($Data);
     }
 
-    public function update(EmployeeRequest $request, Employee $employee)
+    public function update(Request $request, Model $model)
     {
         $employeeData = $request->validated();
-        $employeeData['avatar'] = $this->fileUpdate('avatar', 'avatar', 'public', $employee->avatar, ImageQuality::Low->value);
-        $employee->update($employeeData);
+        $model->update($employeeData);
     }
 }

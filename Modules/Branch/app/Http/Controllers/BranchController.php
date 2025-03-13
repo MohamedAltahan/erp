@@ -2,10 +2,14 @@
 
 namespace Modules\Branch\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Modules\Branch\Http\Requests\BranchRequest;
+use Modules\Branch\Http\Resources\BranchResource;
 use Modules\Branch\Models\Branch;
+use Modules\Branch\Services\BranchService;
+use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
+use Modules\Employee\Models\Employee;
 
 class BranchController extends ApiController
 {
@@ -24,7 +28,7 @@ class BranchController extends ApiController
 
     public function store(BranchRequest $request, BranchService $branchService)
     {
-        $branchService->create($request);
+        $branchService->create($request, new Branch());
 
         return $this->sendResponse(
             [],
@@ -55,14 +59,6 @@ class BranchController extends ApiController
 
     public function destroy(Branch $branch)
     {
-        if ($branch->role == BranchRoleEnum::SuperAdmin) {
-            return $this->sendResponse(
-                [],
-                __('Super admin can not be deleted'),
-                StatusCodeEnum::Success->value
-            );
-        }
-
         $branch->delete();
 
         return $this->sendResponse(

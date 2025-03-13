@@ -5,20 +5,24 @@ namespace Modules\Branch\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 // use Modules\$MODULE$\Database\Factories\$NAME$Factory;
 
 class Branch extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, HasTranslations;
 
     public $timestamps = false;
 
-    protected $fillable = ['name_ar', 'name_en', 'description', 'address', 'note', 'phone', 'created_at'];
+    protected $translatable = ['name', 'description', 'address'];
+
+    protected $fillable = ['name', 'description', 'address', 'status', 'phone', 'created_at'];
 
     protected $casts = [
+        'name' => 'array',
         'description' => 'array',
         'address' => 'array',
-        'note' => 'array',
+
     ];
 }
