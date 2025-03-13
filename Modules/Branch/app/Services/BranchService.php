@@ -1,15 +1,14 @@
 <?php
 
-namespace Modules\Employee\Services;
+namespace Modules\Branch\Services;
 
 use Modules\Common\Enums\ImageQuality;
 use Modules\Common\Traits\UploadFile;
 use Modules\Employee\Http\Requests\EmployeeRequest;
 use Modules\Employee\Models\Employee;
 
-class EmployeeService
+class BranchService
 {
-    use UploadFile;
 
     public function create(EmployeeRequest $request)
     {

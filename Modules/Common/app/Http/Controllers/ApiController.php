@@ -9,5 +9,10 @@ class ApiController extends Controller
 {
     use ApiResponse;
 
-    protected ?int $perPage = 10;
+    protected ?int $perPage;
+
+    public function __construct()
+    {
+        $this->perPage = request('per_page') ?? 10;
+    }
 }

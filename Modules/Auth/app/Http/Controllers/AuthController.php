@@ -2,10 +2,8 @@
 
 namespace Modules\Auth\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use Modules\Auth\Http\Requests\LoginRequest;
-use Modules\Auth\Http\Requests\RegisterRequest;
 use Modules\Auth\Services\AuthService;
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;

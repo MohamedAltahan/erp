@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Modules\Common\Enums\EmployeeRoleEnum;
 use Modules\Employee\Models\Employee;
 
-class EmployeeDatabaseSeeder extends Seeder
+class EmployeeSeeder extends Seeder
 {
     public function run(): void
     {
@@ -17,7 +17,7 @@ class EmployeeDatabaseSeeder extends Seeder
             'username' => 'admin',
             'name_en' => null,
             'branch_id' => 1,
-            'role' => EmployeeRoleEnum::Admin,
+            'role' => EmployeeRoleEnum::SuperAdmin,
             'email' => 'admin@example.com',
             'password' => Hash::make('admin'),
         ]);

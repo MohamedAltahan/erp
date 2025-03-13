@@ -178,6 +178,10 @@ return [
 
     'attributes' => [
         'branch_id' => 'الفرع',
+        'name_ar' => 'الاسم بالعربية',
+        'name_en' => 'الاسم بالانجليزية',
+        'email' => 'البريد الالكتروني',
+        'password' => 'كلمة المرور',
         'payment_type' => 'نوع الدفع',
         'treasury_account' => 'حساب الخزينة',
         'is_active' => 'حالة التفعيل',

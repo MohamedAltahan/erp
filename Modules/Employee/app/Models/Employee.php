@@ -20,6 +20,7 @@ class Employee extends Authenticatable
         'branch_id',
         'phone',
         'email',
+        'avatar',
         'password',
         'address',
         'role',

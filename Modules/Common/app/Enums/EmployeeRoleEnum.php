@@ -4,6 +4,7 @@ namespace Modules\Common\Enums;
 
 enum EmployeeRoleEnum: int
 {
-    case Admin = 1;
-    case Employee = 2;
+    case SuperAdmin = 1;
+    case Admin = 2;
+    case Employee = 3;
 }
