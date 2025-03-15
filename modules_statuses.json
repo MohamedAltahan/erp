@@ -5,5 +5,6 @@
     "Employee": true,
     "Permission": true,
     "Common": false,
-    "Branch": true
+    "Branch": true,
+    "AccountTree": true
 }

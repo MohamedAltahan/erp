@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('branches', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->json('name');
             $table->json('description')->nullable();
             $table->json('address')->nullable();
             $table->string('phone')->nullable();
-            $table->boolean('status')->default(true);
+            $table->boolean('is_active')->default(1);
             $table->timestamp('created_at')->useCurrent();
         });
     }

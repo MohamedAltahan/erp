@@ -1,0 +1,11 @@
+{
+    "name": "AccountTree",
+    "alias": "accounttree",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AccountTree\\Providers\\AccountTreeServiceProvider"
+    ],
+    "files": []
+}
