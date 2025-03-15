@@ -324,21 +324,302 @@ class AccountTreeSeeder extends Seeder
         ]);
         if (!$longTermLoans->parent_id)   $longTermLoans->appendToNode($longTermLiabilities)->save();
 
-        // // ==================================================================== 3.1 - Child accounts under Income
+        // // ==================================================================== 3.1 - Child accounts under equity
         $capital = AccountTree::firstOrCreate([
             'account_code' => 31
         ], [
             'name' => ['ar' => 'رأس المال', 'en' => 'Capital'],
             'account_code' => 31,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_type' => 3
         ]);
         if (!$capital->parent_id)  $capital->appendToNode($equity)->save();
 
-        // ==================================================================== 4.1 - Child accounts under Income
+        $ownerDrawings = AccountTree::firstOrCreate([
+            'account_code' => 32
+        ], [
+            'name' => ['ar' => 'المسحوبات الشخصيه', 'en' => 'Owner drawings'],
+            'account_code' => 32,
+            'account_nature' => 'credit',
+            'account_type' => 3
+        ]);
+        if (!$ownerDrawings->parent_id)  $ownerDrawings->appendToNode($equity)->save();
 
+        $ownerCurrentAccount = AccountTree::firstOrCreate([
+            'account_code' => 33
+        ], [
+            'name' => ['ar' => 'جار ي صاحب الشركة', 'en' => 'Owner current account'],
+            'account_code' => 33,
+            'account_nature' => 'credit',
+            'account_type' => 3
+        ]);
+        if (!$ownerCurrentAccount->parent_id)  $ownerCurrentAccount->appendToNode($equity)->save();
+
+        $reserves = AccountTree::firstOrCreate([
+            'account_code' => 34
+        ], [
+            'name' => ['ar' => 'الاحتياطات', 'en' => 'Reserves'],
+            'account_code' => 34,
+            'account_nature' => 'credit',
+            'account_type' => 3
+        ]);
+        if (!$reserves->parent_id)  $reserves->appendToNode($equity)->save();
+
+        $retainedEarnings = AccountTree::firstOrCreate([
+            'account_code' => 35
+        ], [
+            'name' => ['ar' => 'الارباح المحتجزه', 'en' => 'Retained earnings'],
+            'account_code' => 35,
+            'account_nature' => 'credit',
+            'account_type' => 3
+        ]);
+        if (!$retainedEarnings->parent_id)  $retainedEarnings->appendToNode($equity)->save();
+
+        // ==================================================================== 4.1 - Child accounts under Income
+        $mainActivityRevenue = AccountTree::firstOrCreate([
+            'account_code' => 41
+        ], [
+            'name' => ['ar' => 'ايرادات النشاط الرئيسي', 'en' => 'Main activity revenue'],
+            'account_code' => 41,
+            'account_nature' => 'credit',
+            'account_type' => 4
+        ]);
+        if (!$mainActivityRevenue->parent_id)  $mainActivityRevenue->appendToNode($income)->save();
+
+        $sales = AccountTree::firstOrCreate([
+            'account_code' => 411
+        ], [
+            'name' => ['ar' => 'المبيعات', 'en' => 'Sales'],
+            'account_code' => 411,
+            'account_nature' => 'credit',
+            'account_type' => 4
+        ]);
+        if (!$sales->parent_id)  $sales->appendToNode($mainActivityRevenue)->save();
+
+        $salesRefund = AccountTree::firstOrCreate([
+            'account_code' => 412
+        ], [
+            'name' => ['ar' => 'مردودات المبيعات', 'en' => 'Sales refund'],
+            'account_code' => 412,
+            'account_nature' => 'debit',
+            'account_type' => 4
+        ]);
+        if (!$salesRefund->parent_id)  $salesRefund->appendToNode($mainActivityRevenue)->save();
+
+        $discountOnSales = AccountTree::firstOrCreate([
+            'account_code' => 413
+        ], [
+            'name' => ['ar' => 'الخصم علي المبيعات', 'en' => 'Discount on sales'],
+            'account_code' => 413,
+            'account_nature' => 'debit',
+            'account_type' => 4
+        ]);
+        if (!$discountOnSales->parent_id)  $discountOnSales->appendToNode($mainActivityRevenue)->save();
+
+        $salesTax = AccountTree::firstOrCreate([
+            'account_code' => 414
+        ], [
+            'name' => ['ar' => 'ضريبة.ق.م مبيعات', 'en' => 'Sales tax'],
+            'account_code' => 414,
+            'account_nature' => 'credit',
+            'account_type' => 4
+        ]);
+        if (!$salesTax->parent_id)  $salesTax->appendToNode($mainActivityRevenue)->save();
+
+        //----------------------------------------------------------------------------------------------
+        $otherIncome = AccountTree::firstOrCreate([
+            'account_code' => 42
+        ], [
+            'name' => ['ar' => 'ايرادات اخرى', 'en' => 'Other income'],
+            'account_code' => 42,
+            'account_nature' => 'credit',
+            'account_type' => 4
+        ]);
+        if (!$otherIncome->parent_id)  $otherIncome->appendToNode($income)->save();
+
+        $investmentRevenue = AccountTree::firstOrCreate([
+            'account_code' => 421
+        ], [
+            'name' => ['ar' => 'ايرادات الاستثمار', 'en' => 'Investment revenue'],
+            'account_code' => 421,
+            'account_nature' => 'credit',
+            'account_type' => 4
+        ]);
+        if (!$investmentRevenue->parent_id)  $investmentRevenue->appendToNode($otherIncome)->save();
+
+        $rentalIncome = AccountTree::firstOrCreate([
+            'account_code' => 422
+        ], [
+            'name' => ['ar' => 'ايرادات الايجار', 'en' => 'Rental income'],
+            'account_code' => 422,
+            'account_nature' => 'credit',
+            'account_type' => 4
+        ]);
+        if (!$rentalIncome->parent_id)  $rentalIncome->appendToNode($otherIncome)->save();
 
         // ==================================================================== 5.1 - Child accounts under Expenses
 
+        $saleCost = AccountTree::firstOrCreate([
+            'account_code' => 51
+        ], [
+            'name' => ['ar' => 'تكلفة المبيعات', 'en' => 'Sales cost'],
+            'account_code' => 51,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$saleCost->parent_id)  $saleCost->appendToNode($expenses)->save();
+
+        $purchases = AccountTree::firstOrCreate([
+            'account_code' => 511
+        ], [
+            'name' => ['ar' => 'المشتريات', 'en' => 'Purchases'],
+            'account_code' => 511,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$purchases->parent_id)  $purchases->appendToNode($saleCost)->save();
+
+        $purchasesCost = AccountTree::firstOrCreate([
+            'account_code' => 512
+        ], [
+            'name' => ['ar' => 'مصاريف المشتريات', 'en' => 'Purchases cost'],
+            'account_code' => 512,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$purchasesCost->parent_id)  $purchasesCost->appendToNode($saleCost)->save();
+
+        $purchaseReturn = AccountTree::firstOrCreate([
+            'account_code' => 513
+        ], [
+            'name' => ['ar' => 'مردودات المشتريات', 'en' => 'Purchase returns'],
+            'account_code' => 513,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$purchaseReturn->parent_id)  $purchaseReturn->appendToNode($saleCost)->save();
+
+        $purchaseDiscount = AccountTree::firstOrCreate([
+            'account_code' => 514
+        ], [
+            'name' => ['ar' => 'الخصم على المشتريات', 'en' => 'Purchase discount'],
+            'account_code' => 514,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$purchaseDiscount->parent_id)  $purchaseDiscount->appendToNode($saleCost)->save();
+
+        $purchaseTax = AccountTree::firstOrCreate([
+            'account_code' => 515
+        ], [
+            'name' => ['ar' => 'ضريبة.ق.م مشتريات', 'en' => 'Purchase tax'],
+            'account_code' => 515,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$purchaseTax->parent_id)  $purchaseTax->appendToNode($saleCost)->save();
+
+        //-----------------------------------------------------------------------------------------------
+
+        $sellingAndMarketingExpenses = AccountTree::firstOrCreate([
+            'account_code' => 52
+        ], [
+            'name' => ['ar' => 'مصاريف البيع والتسويق', 'en' => 'Selling and marketing expenses'],
+            'account_code' => 52,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$sellingAndMarketingExpenses->parent_id)  $sellingAndMarketingExpenses->appendToNode($expenses)->save();
+
+        $saleExpenses = AccountTree::firstOrCreate([
+            'account_code' => 521
+        ], [
+            'name' => ['ar' => 'مصاريف المبيعات', 'en' => 'Sale expenses'],
+            'account_code' => 521,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$saleExpenses->parent_id)  $saleExpenses->appendToNode($sellingAndMarketingExpenses)->save();
+
+        $saleCommissions = AccountTree::firstOrCreate([
+            'account_code' => 522
+        ], [
+            'name' => ['ar' => 'عمولات بيع', 'en' => 'Sale commissions'],
+            'account_code' => 522,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$saleCommissions->parent_id)  $saleCommissions->appendToNode($sellingAndMarketingExpenses)->save();
+
+        $advertising = AccountTree::firstOrCreate([
+            'account_code' => 523
+        ], [
+            'name' => ['ar' => 'دعاية واعلان', 'en' => 'Advertising'],
+            'account_code' => 523,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$advertising->parent_id)  $advertising->appendToNode($sellingAndMarketingExpenses)->save();
+
+        //--------------------------------------------------------------------------------------------------------
+        $genralAndAdministrativeExpenses = AccountTree::firstOrCreate([
+            'account_code' => 53
+        ], [
+            'name' => ['ar' => 'مصاريف ادارية وعمومية', 'en' => 'General and administrative expenses'],
+            'account_code' => 53,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$genralAndAdministrativeExpenses->parent_id)  $genralAndAdministrativeExpenses->appendToNode($expenses)->save();
+
+        $salaries = AccountTree::firstOrCreate([
+            'account_code' => 531
+        ], [
+            'name' => ['ar' => 'رواتب', 'en' => 'Salaries'],
+            'account_code' => 531,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$salaries->parent_id)  $salaries->appendToNode($genralAndAdministrativeExpenses)->save();
+
+        $rent = AccountTree::firstOrCreate([
+            'account_code' => 532
+        ], [
+            'name' =>  ['ar' => 'ايجار', 'en' => 'Rent'],
+            'account_code' => 532,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$rent->parent_id)  $rent->appendToNode($genralAndAdministrativeExpenses)->save();
+
+        $maintenance = AccountTree::firstOrCreate([
+            'account_code' => 533
+        ], [
+            'name' =>  ['ar' => 'صيانة', 'en' => 'Maintenance'],
+            'account_code' => 533,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$maintenance->parent_id)  $maintenance->appendToNode($genralAndAdministrativeExpenses)->save();
+
+        $phoneAndInternet = AccountTree::firstOrCreate([
+            'account_code' => 534
+        ], [
+            'name' => ['ar' => 'هاتف وانترنت', 'en' => 'Phone and internet'],
+            'account_code' => 534,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$phoneAndInternet->parent_id)  $phoneAndInternet->appendToNode($genralAndAdministrativeExpenses)->save();
+
+        $electricity = AccountTree::firstOrCreate([
+            'account_code' => 535
+        ], [
+            'name' => ['ar' => 'كهرباء', 'en' => 'Electricity'],
+            'account_code' => 535,
+            'account_nature' => 'debit',
+            'account_type' => 5
+        ]);
+        if (!$electricity->parent_id)  $electricity->appendToNode($genralAndAdministrativeExpenses)->save();
     }
 }
