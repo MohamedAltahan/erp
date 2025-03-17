@@ -11,7 +11,8 @@ class BranchSeeder extends Seeder
     {
         Branch::create([
             'id' => 1,
-            'name' => ['en' => 'main branch', 'ar' => 'الفرع الرئيسي'],
+            'name_en' => 'main branch',
+            'name_ar' => 'الفرع الرئيسي',
             'description' => ['en' => 'main branch', 'ar' => 'الفرع الرئيسي'],
             'address' => ['en' => 'main branch', 'ar' => 'الفرع الرئيسي'],
             'phone' => '01000000000',

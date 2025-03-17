@@ -21,8 +21,8 @@ class AccountTreeSeeder extends Seeder
         $assets = AccountTree::firstOrCreate([
             'account_code' => 1
         ], [
-            'name' =>
-            ['ar' => 'الأصول', 'en' => 'Assets'],
+            'name_ar' => 'الأصول',
+            'name_en' => 'Assets',
             'account_code' => 1,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -30,7 +30,8 @@ class AccountTreeSeeder extends Seeder
         $liabilities = AccountTree::firstOrCreate([
             'account_code' => 2
         ], [
-            'name' => ['ar' => 'الالتزامات', 'en' =>  'Liabilities'],
+            'name_ar' => 'الالتزامات',
+            'name_en' => 'Liabilities',
             'account_code' => 2,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -38,7 +39,8 @@ class AccountTreeSeeder extends Seeder
         $equity = AccountTree::firstOrCreate([
             'account_code' => 3
         ], [
-            'name' => ['ar' => 'حقوق الملكية', 'en' => 'Equity'],
+            'name_ar' => 'حقوق الملكية',
+            'name_en' => 'Equity',
             'account_code' => 3,
             'account_nature' => 'credit',
             'account_type' => 3
@@ -46,7 +48,8 @@ class AccountTreeSeeder extends Seeder
         $income = AccountTree::firstOrCreate([
             'account_code' => 4
         ], [
-            'name' => ['ar' => 'الإيرادات', 'en' => 'Income'],
+            'name_ar' => 'الإيرادات',
+            'name_en' => 'Income',
             'account_code' => 4,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -54,7 +57,8 @@ class AccountTreeSeeder extends Seeder
         $expenses = AccountTree::firstOrCreate([
             'account_code' => 5
         ], [
-            'name' => ['ar' => 'المصروفات', 'en' => 'Expenses'],
+            'name_ar' => 'المصروفات',
+            'name_en' => 'Expenses',
             'account_code' => 5,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -64,7 +68,8 @@ class AccountTreeSeeder extends Seeder
         $FixedAssets = AccountTree::firstOrCreate([
             'account_code' => 11
         ], [
-            'name' => ['ar' => 'الأصول الثابتة', 'en' => 'Fixed assets'],
+            'name_ar' => 'الأصول الثابتة',
+            'name_en' => 'Fixed assets',
             'account_code' => 11,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -74,7 +79,8 @@ class AccountTreeSeeder extends Seeder
         $lands = AccountTree::firstOrCreate([
             'account_code' => 111
         ], [
-            'name' =>  ['ar' => 'الاارضى', 'en' => 'Lands'],
+            'name_ar' => 'الاارضى',
+            'name_en' => 'Lands',
             'account_code' => 111,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -84,7 +90,8 @@ class AccountTreeSeeder extends Seeder
         $buildings = AccountTree::firstOrCreate([
             'account_code' => 112
         ], [
-            'name' =>  ['ar' => 'المبانى', 'en' => 'Buildings'],
+            'name_ar' => 'المبانى',
+            'name_en' => 'Buildings',
             'account_code' => 112,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -94,7 +101,8 @@ class AccountTreeSeeder extends Seeder
         $furniture = AccountTree::firstOrCreate([
             'account_code' => 113
         ], [
-            'name' =>  ['ar' => 'الاثاث', 'en' => 'Furniture'],
+            'name_ar' => 'الاثاث',
+            'name_en' => 'Furniture',
             'account_code' => 113,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -104,7 +112,8 @@ class AccountTreeSeeder extends Seeder
         $cars = AccountTree::firstOrCreate([
             'account_code' => 114
         ], [
-            'name' =>  ['ar' => 'السيارات', 'en' => 'Cars'],
+            'name_ar' => 'السيارات',
+            'name_en' => 'Cars',
             'account_code' => 114,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -114,7 +123,8 @@ class AccountTreeSeeder extends Seeder
         $machines = AccountTree::firstOrCreate([
             'account_code' => 115
         ], [
-            'name' =>  ['ar' => 'الات', 'en' => 'Machines'],
+            'name_ar' => 'الات',
+            'name_en' => 'Machines',
             'account_code' => 115,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -124,7 +134,8 @@ class AccountTreeSeeder extends Seeder
         $equipment = AccountTree::firstOrCreate([
             'account_code' => 116
         ], [
-            'name' =>  ['ar' => 'معدات', 'en' => 'Equipment'],
+            'name_ar' => 'معدات',
+            'name_en' => 'Equipment',
             'account_code' => 116,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -135,7 +146,8 @@ class AccountTreeSeeder extends Seeder
         $currentAssets = AccountTree::firstOrCreate([
             'account_code' => 12
         ], [
-            'name' => ['ar' => 'الاصول المتداولة', 'en' => 'Current assets'],
+            'name_ar' => 'الاصول المتداولة',
+            'name_en' => 'Current assets',
             'account_code' => 12,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -145,7 +157,8 @@ class AccountTreeSeeder extends Seeder
         $treasury = AccountTree::firstOrCreate([
             'account_code' => 121
         ], [
-            'name' => ['ar' => 'الصندوق', 'en' => 'Treasury'],
+            'name_ar' => 'الصندوق',
+            'name_en' => 'Treasury',
             'account_code' => 121,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -155,7 +168,8 @@ class AccountTreeSeeder extends Seeder
         $mainTreasury = AccountTree::firstOrCreate([
             'account_code' => 1211
         ], [
-            'name' => ['ar' => 'الخزينة الرئيسية', 'en' => 'Main treasury'],
+            'name_ar' => 'الخزينة الرئيسية',
+            'name_en' => 'Main treasury',
             'account_code' => 1211,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -165,7 +179,8 @@ class AccountTreeSeeder extends Seeder
         $bank = AccountTree::firstOrCreate([
             'account_code' => 122
         ], [
-            'name' => ['ar' => 'البنك', 'en' => 'The banks'],
+            'name_ar' => 'البنك',
+            'name_en' => 'The banks',
             'account_code' => 122,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -175,7 +190,8 @@ class AccountTreeSeeder extends Seeder
         $notesReceivable = AccountTree::firstOrCreate([
             'account_code' => 123
         ], [
-            'name' => ['ar' => 'اوراق قبض', 'en' => 'Notes receivable'],
+            'name_ar' => 'اوراق قبض',
+            'name_en' => 'Notes receivable',
             'account_code' => 123,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -185,7 +201,8 @@ class AccountTreeSeeder extends Seeder
         $warehouses = AccountTree::firstOrCreate([
             'account_code' => 124
         ], [
-            'name' => ['ar' => 'المخازن', 'en' => 'Warehouses'],
+            'name_ar' => 'المخازن',
+            'name_en' => 'Warehouses',
             'account_code' => 124,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -195,7 +212,8 @@ class AccountTreeSeeder extends Seeder
         $customers = AccountTree::firstOrCreate([
             'account_code' => 125
         ], [
-            'name' => ['ar' => 'العملاء', 'en' => 'Customers'],
+            'name_ar' => 'العملاء',
+            'name_en' => 'Customers',
             'account_code' => 125,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -205,7 +223,8 @@ class AccountTreeSeeder extends Seeder
         $defaultCustomer = AccountTree::firstOrCreate([
             'account_code' => 1251
         ], [
-            'name' => ['ar' => 'عميل افتراضي', 'en' => 'Default customer'],
+            'name_ar' => 'عميل افتراضي',
+            'name_en' => 'Default customer',
             'account_code' => 1251,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -215,7 +234,8 @@ class AccountTreeSeeder extends Seeder
         $accruedRevenues = AccountTree::firstOrCreate([
             'account_code' => 126
         ], [
-            'name' => ['ar' => 'ايرادات مستحقه', 'en' => 'Accrued revenues'],
+            'name_ar' => 'ايرادات مستحقه',
+            'name_en' => 'Accrued revenues',
             'account_code' => 126,
             'account_nature' => 'debit',
             'account_type' => 1
@@ -226,7 +246,8 @@ class AccountTreeSeeder extends Seeder
         $currentLiabilities = AccountTree::firstOrCreate([
             'account_code' => 21
         ], [
-            'name' => ['ar' => 'الالتزامات المتداولة', 'en' => 'Current liabilities'],
+            'name_ar' => 'الالتزامات المتداولة',
+            'name_en' => 'Current liabilities',
             'account_code' => 21,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -236,7 +257,8 @@ class AccountTreeSeeder extends Seeder
         $accountsPayable = AccountTree::firstOrCreate([
             'account_code' => 211
         ], [
-            'name' => ['ar' => 'الحسابات الدائنة', 'en' => 'Accounts payable'],
+            'name_ar' => 'الحسابات الدائنة',
+            'name_en' => 'Accounts payable',
             'account_code' => 211,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -246,7 +268,8 @@ class AccountTreeSeeder extends Seeder
         $otherCreditors = AccountTree::firstOrCreate([
             'account_code' => 2111
         ], [
-            'name' => ['ar' => 'دائنون متنوعون', 'en' => 'Other creditors'],
+            'name_ar' => 'دائنون متنوعون',
+            'name_en' => 'Other creditors',
             'account_code' => 2111,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -256,7 +279,8 @@ class AccountTreeSeeder extends Seeder
         $suppliers = AccountTree::firstOrCreate([
             'account_code' => 2112
         ], [
-            'name' => ['ar' => 'الموردون', 'en' => 'supplier'],
+            'name_ar' => 'الموردون',
+            'name_en' => 'supplier',
             'account_code' => 2112,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -266,7 +290,8 @@ class AccountTreeSeeder extends Seeder
         $defaultSupplier = AccountTree::firstOrCreate([
             'account_code' => 21121
         ], [
-            'name' => ['ar' => 'مورد افتراضي', 'en' => 'Default supplier'],
+            'name_ar' => 'مورد افتراضي',
+            'name_en' => 'Default supplier',
             'account_code' => 21121,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -276,7 +301,8 @@ class AccountTreeSeeder extends Seeder
         $shortTtermLoans = AccountTree::firstOrCreate([
             'account_code' => 2113
         ], [
-            'name' => ['ar' => 'قروض قصيرة الاجل', 'en' => 'Short-term loans'],
+            'name_ar' => 'قروض قصيرة الاجل',
+            'name_en' => 'Short-term loans',
             'account_code' => 2113,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -286,7 +312,8 @@ class AccountTreeSeeder extends Seeder
         $notesPayable = AccountTree::firstOrCreate([
             'account_code' => 2114
         ], [
-            'name' => ['ar' => 'أوراق الدفع', 'en' => 'Notes payable'],
+            'name_ar' => 'أوراق الدفع',
+            'name_en' => 'Notes payable',
             'account_code' => 2114,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -296,7 +323,8 @@ class AccountTreeSeeder extends Seeder
         $revenueReceivedInAdvance = AccountTree::firstOrCreate([
             'account_code' => 2116
         ], [
-            'name' => ['ar' => 'ايرادات مقبوضه مقدما', 'en' => 'Revenue received in advance'],
+            'name_ar' => 'ايرادات مقبوضه مقدما',
+            'name_en' => 'Revenue received in advance',
             'account_code' => 2116,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -307,7 +335,8 @@ class AccountTreeSeeder extends Seeder
         $longTermLiabilities = AccountTree::firstOrCreate([
             'account_code' => 22
         ], [
-            'name' => ['ar' => 'الالتزامات طويلة الاجل', 'en' => 'Long-term Liabilities'],
+            'name_ar' => 'الالتزامات طويلة الاجل',
+            'name_en' => 'Long-term Liabilities',
             'account_code' => 22,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -317,7 +346,8 @@ class AccountTreeSeeder extends Seeder
         $longTermLoans = AccountTree::firstOrCreate([
             'account_code' => 221
         ], [
-            'name' => ['ar' => 'قروض طويلة الاجل', 'en' => 'Long-term loans'],
+            'name_ar' => 'قروض طويلة الاجل',
+            'name_en' => 'Long-term loans',
             'account_code' => 221,
             'account_nature' => 'credit',
             'account_type' => 2
@@ -328,7 +358,8 @@ class AccountTreeSeeder extends Seeder
         $capital = AccountTree::firstOrCreate([
             'account_code' => 31
         ], [
-            'name' => ['ar' => 'رأس المال', 'en' => 'Capital'],
+            'name_ar' => 'رأس المال',
+            'name_en' => 'Capital',
             'account_code' => 31,
             'account_nature' => 'credit',
             'account_type' => 3
@@ -338,7 +369,8 @@ class AccountTreeSeeder extends Seeder
         $ownerDrawings = AccountTree::firstOrCreate([
             'account_code' => 32
         ], [
-            'name' => ['ar' => 'المسحوبات الشخصيه', 'en' => 'Owner drawings'],
+            'name_ar' => 'المسحوبات الشخصيه',
+            'name_en' => 'Owner drawings',
             'account_code' => 32,
             'account_nature' => 'credit',
             'account_type' => 3
@@ -348,7 +380,8 @@ class AccountTreeSeeder extends Seeder
         $ownerCurrentAccount = AccountTree::firstOrCreate([
             'account_code' => 33
         ], [
-            'name' => ['ar' => 'جار ي صاحب الشركة', 'en' => 'Owner current account'],
+            'name_ar' => 'جار ي صاحب الشركة',
+            'name_en' => 'Owner current account',
             'account_code' => 33,
             'account_nature' => 'credit',
             'account_type' => 3
@@ -358,7 +391,8 @@ class AccountTreeSeeder extends Seeder
         $reserves = AccountTree::firstOrCreate([
             'account_code' => 34
         ], [
-            'name' => ['ar' => 'الاحتياطات', 'en' => 'Reserves'],
+            'name_ar' => 'الاحتياطات',
+            'name_en' => 'Reserves',
             'account_code' => 34,
             'account_nature' => 'credit',
             'account_type' => 3
@@ -368,7 +402,8 @@ class AccountTreeSeeder extends Seeder
         $retainedEarnings = AccountTree::firstOrCreate([
             'account_code' => 35
         ], [
-            'name' => ['ar' => 'الارباح المحتجزه', 'en' => 'Retained earnings'],
+            'name_ar' => 'الارباح المحتجزه',
+            'name_en' => 'Retained earnings',
             'account_code' => 35,
             'account_nature' => 'credit',
             'account_type' => 3
@@ -379,7 +414,8 @@ class AccountTreeSeeder extends Seeder
         $mainActivityRevenue = AccountTree::firstOrCreate([
             'account_code' => 41
         ], [
-            'name' => ['ar' => 'ايرادات النشاط الرئيسي', 'en' => 'Main activity revenue'],
+            'name_ar' => 'ايرادات النشاط الرئيسي',
+            'name_en' => 'Main activity revenue',
             'account_code' => 41,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -389,7 +425,8 @@ class AccountTreeSeeder extends Seeder
         $sales = AccountTree::firstOrCreate([
             'account_code' => 411
         ], [
-            'name' => ['ar' => 'المبيعات', 'en' => 'Sales'],
+            'name_ar' => 'المبيعات',
+            'name_en' => 'Sales',
             'account_code' => 411,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -399,7 +436,8 @@ class AccountTreeSeeder extends Seeder
         $salesRefund = AccountTree::firstOrCreate([
             'account_code' => 412
         ], [
-            'name' => ['ar' => 'مردودات المبيعات', 'en' => 'Sales refund'],
+            'name_ar' => 'مردودات المبيعات',
+            'name_en' => 'Sales refund',
             'account_code' => 412,
             'account_nature' => 'debit',
             'account_type' => 4
@@ -409,7 +447,8 @@ class AccountTreeSeeder extends Seeder
         $discountOnSales = AccountTree::firstOrCreate([
             'account_code' => 413
         ], [
-            'name' => ['ar' => 'الخصم علي المبيعات', 'en' => 'Discount on sales'],
+            'name_ar' => 'الخصم علي المبيعات',
+            'name_en' => 'Discount on sales',
             'account_code' => 413,
             'account_nature' => 'debit',
             'account_type' => 4
@@ -419,7 +458,8 @@ class AccountTreeSeeder extends Seeder
         $salesTax = AccountTree::firstOrCreate([
             'account_code' => 414
         ], [
-            'name' => ['ar' => 'ضريبة.ق.م مبيعات', 'en' => 'Sales tax'],
+            'name_ar' => 'ضريبة.ق.م مبيعات',
+            'name_en' => 'Sales tax',
             'account_code' => 414,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -430,7 +470,8 @@ class AccountTreeSeeder extends Seeder
         $otherIncome = AccountTree::firstOrCreate([
             'account_code' => 42
         ], [
-            'name' => ['ar' => 'ايرادات اخرى', 'en' => 'Other income'],
+            'name_ar' => 'ايرادات اخرى',
+            'name_en' => 'Other income',
             'account_code' => 42,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -440,7 +481,8 @@ class AccountTreeSeeder extends Seeder
         $investmentRevenue = AccountTree::firstOrCreate([
             'account_code' => 421
         ], [
-            'name' => ['ar' => 'ايرادات الاستثمار', 'en' => 'Investment revenue'],
+            'name_ar' => 'ايرادات الاستثمار',
+            'name_en' => 'Investment revenue',
             'account_code' => 421,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -450,7 +492,8 @@ class AccountTreeSeeder extends Seeder
         $rentalIncome = AccountTree::firstOrCreate([
             'account_code' => 422
         ], [
-            'name' => ['ar' => 'ايرادات الايجار', 'en' => 'Rental income'],
+            'name_ar' => 'ايرادات الايجار',
+            'name_en' => 'Rental income',
             'account_code' => 422,
             'account_nature' => 'credit',
             'account_type' => 4
@@ -462,7 +505,8 @@ class AccountTreeSeeder extends Seeder
         $saleCost = AccountTree::firstOrCreate([
             'account_code' => 51
         ], [
-            'name' => ['ar' => 'تكلفة المبيعات', 'en' => 'Sales cost'],
+            'name_ar' => 'تكلفة المبيعات',
+            'name_en' => 'Sales cost',
             'account_code' => 51,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -472,7 +516,8 @@ class AccountTreeSeeder extends Seeder
         $purchases = AccountTree::firstOrCreate([
             'account_code' => 511
         ], [
-            'name' => ['ar' => 'المشتريات', 'en' => 'Purchases'],
+            'name_ar' => 'المشتريات',
+            'name_en' => 'Purchases',
             'account_code' => 511,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -482,7 +527,8 @@ class AccountTreeSeeder extends Seeder
         $purchasesCost = AccountTree::firstOrCreate([
             'account_code' => 512
         ], [
-            'name' => ['ar' => 'مصاريف المشتريات', 'en' => 'Purchases cost'],
+            'name_ar' => 'مصاريف المشتريات',
+            'name_en' => 'Purchases cost',
             'account_code' => 512,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -492,7 +538,8 @@ class AccountTreeSeeder extends Seeder
         $purchaseReturn = AccountTree::firstOrCreate([
             'account_code' => 513
         ], [
-            'name' => ['ar' => 'مردودات المشتريات', 'en' => 'Purchase returns'],
+            'name_ar' => 'مردودات المشتريات',
+            'name_en' => 'Purchase returns',
             'account_code' => 513,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -502,7 +549,8 @@ class AccountTreeSeeder extends Seeder
         $purchaseDiscount = AccountTree::firstOrCreate([
             'account_code' => 514
         ], [
-            'name' => ['ar' => 'الخصم على المشتريات', 'en' => 'Purchase discount'],
+            'name_ar' => 'الخصم على المشتريات',
+            'name_en' => 'Purchase discount',
             'account_code' => 514,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -512,7 +560,8 @@ class AccountTreeSeeder extends Seeder
         $purchaseTax = AccountTree::firstOrCreate([
             'account_code' => 515
         ], [
-            'name' => ['ar' => 'ضريبة.ق.م مشتريات', 'en' => 'Purchase tax'],
+            'name_ar' => 'ضريبة.ق.م مشتريات',
+            'name_en' => 'Purchase tax',
             'account_code' => 515,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -524,7 +573,8 @@ class AccountTreeSeeder extends Seeder
         $sellingAndMarketingExpenses = AccountTree::firstOrCreate([
             'account_code' => 52
         ], [
-            'name' => ['ar' => 'مصاريف البيع والتسويق', 'en' => 'Selling and marketing expenses'],
+            'name_ar' => 'مصاريف البيع والتسويق',
+            'name_en' => 'Selling and marketing expenses',
             'account_code' => 52,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -534,7 +584,8 @@ class AccountTreeSeeder extends Seeder
         $saleExpenses = AccountTree::firstOrCreate([
             'account_code' => 521
         ], [
-            'name' => ['ar' => 'مصاريف المبيعات', 'en' => 'Sale expenses'],
+            'name_ar' => 'مصاريف المبيعات',
+            'name_en' => 'Sale expenses',
             'account_code' => 521,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -544,7 +595,8 @@ class AccountTreeSeeder extends Seeder
         $saleCommissions = AccountTree::firstOrCreate([
             'account_code' => 522
         ], [
-            'name' => ['ar' => 'عمولات بيع', 'en' => 'Sale commissions'],
+            'name_ar' => 'عمولات بيع',
+            'name_en' => 'Sale commissions',
             'account_code' => 522,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -554,7 +606,8 @@ class AccountTreeSeeder extends Seeder
         $advertising = AccountTree::firstOrCreate([
             'account_code' => 523
         ], [
-            'name' => ['ar' => 'دعاية واعلان', 'en' => 'Advertising'],
+            'name_ar' => 'دعاية واعلان',
+            'name_en' => 'Advertising',
             'account_code' => 523,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -565,7 +618,8 @@ class AccountTreeSeeder extends Seeder
         $genralAndAdministrativeExpenses = AccountTree::firstOrCreate([
             'account_code' => 53
         ], [
-            'name' => ['ar' => 'مصاريف ادارية وعمومية', 'en' => 'General and administrative expenses'],
+            'name_ar' => 'مصاريف ادارية وعمومية',
+            'name_en' => 'General and administrative expenses',
             'account_code' => 53,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -575,7 +629,8 @@ class AccountTreeSeeder extends Seeder
         $salaries = AccountTree::firstOrCreate([
             'account_code' => 531
         ], [
-            'name' => ['ar' => 'رواتب', 'en' => 'Salaries'],
+            'name_ar' => 'رواتب',
+            'name_en' => 'Salaries',
             'account_code' => 531,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -585,7 +640,8 @@ class AccountTreeSeeder extends Seeder
         $rent = AccountTree::firstOrCreate([
             'account_code' => 532
         ], [
-            'name' =>  ['ar' => 'ايجار', 'en' => 'Rent'],
+            'name_ar' => 'ايجار',
+            'name_en' => 'Rent',
             'account_code' => 532,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -595,7 +651,8 @@ class AccountTreeSeeder extends Seeder
         $maintenance = AccountTree::firstOrCreate([
             'account_code' => 533
         ], [
-            'name' =>  ['ar' => 'صيانة', 'en' => 'Maintenance'],
+            'name_ar' => 'صيانة',
+            'name_en' => 'Maintenance',
             'account_code' => 533,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -605,7 +662,8 @@ class AccountTreeSeeder extends Seeder
         $phoneAndInternet = AccountTree::firstOrCreate([
             'account_code' => 534
         ], [
-            'name' => ['ar' => 'هاتف وانترنت', 'en' => 'Phone and internet'],
+            'name_ar' => 'هاتف وانترنت',
+            'name_en' => 'Phone and internet',
             'account_code' => 534,
             'account_nature' => 'debit',
             'account_type' => 5
@@ -615,7 +673,8 @@ class AccountTreeSeeder extends Seeder
         $electricity = AccountTree::firstOrCreate([
             'account_code' => 535
         ], [
-            'name' => ['ar' => 'كهرباء', 'en' => 'Electricity'],
+            'name_ar' => 'كهرباء',
+            'name_en' => 'Electricity',
             'account_code' => 535,
             'account_nature' => 'debit',
             'account_type' => 5

@@ -14,8 +14,9 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->foreignId('account_code')->constrained('account_trees', 'account_code')->onDelete('cascade')->onUpdate('cascade');
+            $table->varchar('name_ar')->nullable();
+            $table->varchar('name_en')->nullable();
+            $table->foreignId('account_code')->nullable()->constrained('account_trees', 'account_code')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('main_account_code')->nullable()->constrained('account_trees', 'account_code')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('branch_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('username')->unique();
@@ -30,6 +31,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
+            $table->fullText(['name_en', 'name_ar']); //fulltext index
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

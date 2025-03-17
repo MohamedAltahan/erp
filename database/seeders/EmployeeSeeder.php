@@ -13,8 +13,8 @@ class EmployeeSeeder extends Seeder
     {
         Employee::create([
             'id' => 1,
-            'account_code' => 1,
-            'name' => ['en' => 'main branch', 'ar' => 'الفرع الرئيسي'],
+            'name_en' => 'admin',
+            'name_ar' => 'ادمن',
             'username' => 'admin',
             'branch_id' => 1,
             'role' => EmployeeRoleEnum::SuperAdmin,
