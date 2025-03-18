@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('type', 20);
             $table->longText('content');
             $table->dateTime('created_at')->nullable();
-
             $table->unique('uuid');
             $table->index('batch_id');
             $table->index('family_hash');

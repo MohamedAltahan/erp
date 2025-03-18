@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('account_trees', function (Blueprint $table) {
             $table->id();
             $table->foreignid('account_code')->unique()->index();
-            $table->varchar('name_ar')->nullable();
-            $table->varchar('name_en')->nullable();
+            $table->string('name_ar')->nullable();
+            $table->string('name_en')->nullable();
             $table->enum('account_nature', ['debit', 'credit', 'both']);
             $table->unsignedTinyInteger('account_type')
                 ->comment('1: Asset, 2: Liability, 3: Equity, 4: Income, 5: Expense');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->json('description')->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
-            $table->fullText(['name_ar', 'name_en']);  // FULLTEXT index 
+            $table->fullText(['name_ar', 'name_en']);  // FULLTEXT index
         });
     }
 

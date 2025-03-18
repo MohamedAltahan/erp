@@ -5,6 +5,7 @@ namespace Modules\AccountTree\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Kalnoy\Nestedset\NodeTrait;
+use Modules\Common\Traits\HasLocalizedName;
 use Spatie\Translatable\HasTranslations;
 
 class AccountTree extends Model
@@ -12,8 +13,9 @@ class AccountTree extends Model
     use HasFactory;
     use NodeTrait;
     use HasTranslations;
+    use HasLocalizedName;
 
-    public $translatable = ['name', 'description'];
+    public $translatable = ['description'];
 
     protected $fillable = [
         'account_code',
@@ -21,7 +23,8 @@ class AccountTree extends Model
         'account_type',
         'allow_delete',
         'is_active',
-        'name',
+        'name_ar',
+        'name_en',
         'parent_id',
         'description'
     ];
@@ -30,6 +33,7 @@ class AccountTree extends Model
         'name' => 'array',
     ];
 
+    //accessors
     public function getAccountNatureAttribute($value)
     {
         return __($value);
