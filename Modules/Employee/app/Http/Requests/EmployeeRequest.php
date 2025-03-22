@@ -10,7 +10,7 @@ class EmployeeRequest extends ApiRequest
 {
     public function rules(): array
     {
-        $employee = $this->route('employee');
+        $employee_id = $this->route('employee');
 
         return [
             // 'name' => ['required', 'array', 'max:255'],
@@ -29,10 +29,10 @@ class EmployeeRequest extends ApiRequest
                 'unique:employees,name_en',
             ],
             'password' => 'required|string|min:2',
-            'phone' => ['required', 'string', 'max:20', Rule::unique('employees', 'phone')->ignore($employee)],
-            'username' => ['required', 'string', 'max:20', Rule::unique('employees', 'username')->ignore($employee)],
+            'phone' => ['required', 'string', 'max:20', Rule::unique('employees', 'phone')->ignore($employee_id)],
+            'username' => ['required', 'string', 'max:20', Rule::unique('employees', 'username')->ignore($employee_id)],
             'branch_id' => 'integer|required|exists:branches,id',
-            'email' => ['nullable', 'email', 'max:50', Rule::unique('employees', 'email')->ignore($employee)],
+            'email' => ['nullable', 'email', 'max:50', Rule::unique('employees', 'email')->ignore($employee_id)],
             'role' => ['required', Rule::in(EmployeeRoleEnum::cases())],
             'address' => 'nullable|array|max:300',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:3000',

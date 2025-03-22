@@ -26,7 +26,7 @@ class AccountTreeService
         }
         // auto generate account code
         $lastChild = $parentAccount->children()->orderByDesc('account_code')->first();
-        $account_code = $lastChild ? $lastChild->account_code + 1 : $parentAccount->account_code. 1;
+        $account_code = $lastChild ? $lastChild->account_code + 1 : $parentAccount->account_code . 1;
 
         $accountTree = AccountTree::create([
             'name_ar' => $request->name_ar,
@@ -40,5 +40,20 @@ class AccountTreeService
         ]);
 
         $accountTree->appendToNode($parentAccount)->save();
+    }
+
+    public function update($request, $id)
+    {
+        $accountTree = AccountTree::find($id);
+        $accountTree->update($request->all());
+    }
+
+    public function destroy($id)
+    {
+        $accountTree = AccountTree::find($id);
+        if ($accountTree->allow_delete == 0) {
+            return false;
+        }
+        $accountTree->delete();
     }
 }

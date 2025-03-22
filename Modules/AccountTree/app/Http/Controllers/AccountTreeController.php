@@ -3,6 +3,8 @@
 namespace Modules\AccountTree\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Modules\AccountTree\Http\Requests\AccountTreeRequest;
+use Modules\AccountTree\Models\AccountTree;
 use Modules\AccountTree\Resources\AccountsTreeResource;
 use Modules\AccountTree\Resources\AccountTreeDetailsResource;
 use Modules\AccountTree\Services\AccountTreeService;
@@ -33,12 +35,18 @@ class AccountTreeController extends ApiController
         );
     }
 
-    public function store(Request $request)
+    public function store(AccountTreeRequest $request)
     {
-        $parent = $this->accountTreeService->create($request);
+        $this->accountTreeService->create($request);
+
+        return $this->sendResponse(
+            [],
+            __('Data created successfully'),
+            StatusCodeEnum::Created_successfully->value
+        );
     }
 
-    public function show($id)
+    public function show(int $id)
     {
         $accountTree = $this->accountTreeService->getAccountTreeDetails($id);
 
@@ -49,13 +57,24 @@ class AccountTreeController extends ApiController
         );
     }
 
-    public function update(Request $request, $id)
+    public function update(AccountTreeRequest $request, $id)
     {
-        //
+        $this->accountTreeService->update($request, $id);
+        return $this->sendResponse(
+            [],
+            __('Data updated successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
-    public function destroy($id)
+    public function destroy(int $id)
     {
-        //
+        $this->accountTreeService->destroy($id);
+
+        return $this->sendResponse(
+            [],
+            __('Data deleted successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 }
