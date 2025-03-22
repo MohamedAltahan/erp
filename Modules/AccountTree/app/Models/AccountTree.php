@@ -2,8 +2,8 @@
 
 namespace Modules\AccountTree\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 use Modules\Common\Traits\Filterable;
 use Modules\Common\Traits\HasLocalizedName;
@@ -11,11 +11,11 @@ use Spatie\Translatable\HasTranslations;
 
 class AccountTree extends Model
 {
-    use HasFactory;
-    use NodeTrait;
-    use HasTranslations;
-    use HasLocalizedName;
     use Filterable;
+    use HasFactory;
+    use HasLocalizedName;
+    use HasTranslations;
+    use NodeTrait;
 
     public $translatable = ['description'];
 
@@ -28,7 +28,7 @@ class AccountTree extends Model
         'name_ar',
         'name_en',
         'parent_id',
-        'description'
+        'description',
     ];
 
     protected $casts = [
@@ -36,7 +36,7 @@ class AccountTree extends Model
         'description' => 'array',
     ];
 
-    //accessors
+    // accessors
     public function getAccountNatureAttribute($value)
     {
         return __($value);

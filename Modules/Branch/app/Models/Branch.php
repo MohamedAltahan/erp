@@ -4,7 +4,6 @@ namespace Modules\Branch\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Common\Traits\Filterable;
 use Modules\Common\Traits\HasLocalizedName;
 use Spatie\Translatable\HasTranslations;
@@ -13,7 +12,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Branch extends Model
 {
-    use HasFactory, HasTranslations, HasLocalizedName, Filterable;
+    use Filterable, HasFactory, HasLocalizedName, HasTranslations;
 
     public $timestamps = false;
 

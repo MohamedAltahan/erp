@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->boolean('is_active')->default(1);
             $table->timestamp('created_at')->useCurrent();
-            $table->fullText(['name_en', 'name_ar']); //fulltext index
+            $table->fullText(['name_en', 'name_ar']); // fulltext index
         });
     }
 

@@ -9,7 +9,7 @@ class AccountTreeService
 {
     public function getAccountsTree()
     {
-        return  AccountTree::filter([Search::class])->defaultOrder()->get()->toTree();
+        return AccountTree::filter([Search::class])->defaultOrder()->get()->toTree();
     }
 
     public function getAccountTreeDetails($id)
@@ -21,12 +21,12 @@ class AccountTreeService
     {
         $parentAccount = AccountTree::find($request->parent_id);
 
-        if (!$parentAccount) {
+        if (! $parentAccount) {
             return false;
         }
-        //auto generate account code
+        // auto generate account code
         $lastChild = $parentAccount->children()->orderByDesc('account_code')->first();
-        $account_code = $lastChild ? $lastChild->account_code + 1 : $parentAccount->account_code . 1;
+        $account_code = $lastChild ? $lastChild->account_code + 1 : $parentAccount->account_code. 1;
 
         $accountTree = AccountTree::create([
             'name_ar' => $request->name_ar,

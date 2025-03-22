@@ -2,9 +2,7 @@
 
 namespace Modules\AccountTree\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Modules\AccountTree\Models\AccountTree;
 use Modules\AccountTree\Resources\AccountsTreeResource;
 use Modules\AccountTree\Resources\AccountTreeDetailsResource;
 use Modules\AccountTree\Services\AccountTreeService;
@@ -15,6 +13,7 @@ use Modules\Common\Traits\ApiResponse;
 class AccountTreeController extends ApiController
 {
     use ApiResponse;
+
     protected $accountTreeService;
 
     public function __construct(AccountTreeService $accountTreeService)

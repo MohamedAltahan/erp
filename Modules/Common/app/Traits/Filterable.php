@@ -11,11 +11,9 @@ trait Filterable
     /**
      * Apply the given filters to the query.
      *
-     * @param Builder $query
-     * @param array<FilterContract> $filters
-     * @return Builder
+     * @param  array<FilterContract>  $filters
      */
-    public function scopeFilter(Builder $query,  $filters): Builder
+    public function scopeFilter(Builder $query, $filters): Builder
     {
         if (empty($filters)) {
             return $query;

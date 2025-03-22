@@ -2,11 +2,9 @@
 
 namespace Modules\Employee\Http\Controllers;
 
-use Modules\Common\Enums\EmployeeRoleEnum;
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
-use Modules\Common\Traits\UploadFile;
 use Modules\Employee\Http\Requests\EmployeeRequest;
 use Modules\Employee\Http\Resources\EmployeeResource;
 use Modules\Employee\Models\Employee;
@@ -70,7 +68,7 @@ class EmployeeController extends ApiController
     {
         $deleted = $this->employeeService->destroy($employee);
 
-        if (!$deleted) {
+        if (! $deleted) {
             return $this->sendResponse(
                 [],
                 __('Super admin can not be deleted'),

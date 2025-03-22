@@ -31,7 +31,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
-            $table->fullText(['name_en', 'name_ar']); //fulltext index
+            $table->fullText(['name_en', 'name_ar']); // fulltext index
 
         });
 

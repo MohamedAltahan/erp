@@ -10,6 +10,7 @@ class BranchRequest extends ApiRequest
     public function rules(): array
     {
         $branch = $this->route('branch');
+
         return [
             // 'name' => ['required', 'array', 'max:255'],
             'name_ar' => [

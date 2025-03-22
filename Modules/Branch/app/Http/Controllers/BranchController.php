@@ -7,10 +7,8 @@ use Modules\Branch\Http\Resources\BranchResource;
 use Modules\Branch\Models\Branch;
 use Modules\Branch\Services\BranchService;
 use Modules\Common\Enums\StatusCodeEnum;
-use Modules\Common\Filters\Search;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
-use Modules\Employee\Models\Employee;
 
 class BranchController extends ApiController
 {
@@ -37,7 +35,7 @@ class BranchController extends ApiController
 
     public function store(BranchRequest $request, BranchService $branchService)
     {
-        $branchService->create($request, new Branch());
+        $branchService->create($request, new Branch);
 
         return $this->sendResponse(
             [],

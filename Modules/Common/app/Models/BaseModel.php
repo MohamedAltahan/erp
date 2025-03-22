@@ -10,7 +10,6 @@ use Modules\Common\Fillters\Filterable;
  * @mixin Builder
  * @mixin Eloquent
  */
-
 class BaseModel extends Model
 {
     use Filterable;

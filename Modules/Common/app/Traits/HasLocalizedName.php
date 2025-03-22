@@ -8,6 +8,7 @@ trait HasLocalizedName
     {
         $lang = app()->getLocale();
         $column = "name_$lang";
+
         return $this->$column ?? ($this->name_ar ?? $this->name_en);
     }
 }
