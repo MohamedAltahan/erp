@@ -25,7 +25,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Assets',
             'account_code' => 1,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         $liabilities = AccountTree::firstOrCreate([
             'account_code' => 2
@@ -34,7 +34,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Liabilities',
             'account_code' => 2,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         $equity = AccountTree::firstOrCreate([
             'account_code' => 3
@@ -43,7 +43,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Equity',
             'account_code' => 3,
             'account_nature' => 'credit',
-            'account_type' => 3
+            'account_category' => 3
         ]);
         $income = AccountTree::firstOrCreate([
             'account_code' => 4
@@ -52,7 +52,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Income',
             'account_code' => 4,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         $expenses = AccountTree::firstOrCreate([
             'account_code' => 5
@@ -61,7 +61,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Expenses',
             'account_code' => 5,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
 
         // //======================================================================= 1.1 - Child accounts under fixed Assets
@@ -72,7 +72,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Fixed assets',
             'account_code' => 11,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$FixedAssets->parent_id) $FixedAssets->appendToNode($assets)->save();
 
@@ -83,7 +83,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Lands',
             'account_code' => 111,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$lands->parent_id) $lands->appendToNode($FixedAssets)->save();
 
@@ -94,7 +94,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Buildings',
             'account_code' => 112,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$buildings->parent_id) $buildings->appendToNode($FixedAssets)->save();
 
@@ -105,7 +105,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Furniture',
             'account_code' => 113,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$furniture->parent_id) $furniture->appendToNode($FixedAssets)->save();
 
@@ -116,7 +116,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Cars',
             'account_code' => 114,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$cars->parent_id) $cars->appendToNode($FixedAssets)->save();
 
@@ -127,7 +127,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Machines',
             'account_code' => 115,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$machines->parent_id) $machines->appendToNode($FixedAssets)->save();
 
@@ -138,7 +138,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Equipment',
             'account_code' => 116,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$equipment->parent_id) $equipment->appendToNode($FixedAssets)->save();
 
@@ -150,7 +150,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Current assets',
             'account_code' => 12,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$currentAssets->parent_id) $currentAssets->appendToNode($assets)->save();
 
@@ -161,7 +161,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Treasury',
             'account_code' => 121,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$treasury->parent_id) $treasury->appendToNode($currentAssets)->save();
 
@@ -172,7 +172,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Main treasury',
             'account_code' => 1211,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$mainTreasury->parent_id) $mainTreasury->appendToNode($treasury)->save();
 
@@ -183,7 +183,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'The banks',
             'account_code' => 122,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$bank->parent_id) $bank->appendToNode($currentAssets)->save();
 
@@ -194,7 +194,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Notes receivable',
             'account_code' => 123,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$notesReceivable->parent_id) $notesReceivable->appendToNode($currentAssets)->save();
 
@@ -205,7 +205,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Warehouses',
             'account_code' => 124,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$warehouses->parent_id)  $warehouses->appendToNode($currentAssets)->save();
 
@@ -216,7 +216,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Customers',
             'account_code' => 125,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$customers->parent_id) $customers->appendToNode($currentAssets)->save();
 
@@ -227,7 +227,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Default customer',
             'account_code' => 1251,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$defaultCustomer->parent_id) $defaultCustomer->appendToNode($customers)->save();
 
@@ -238,7 +238,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Accrued revenues',
             'account_code' => 126,
             'account_nature' => 'debit',
-            'account_type' => 1
+            'account_category' => 1
         ]);
         if (!$accruedRevenues->parent_id) $accruedRevenues->appendToNode($currentAssets)->save();
 
@@ -250,7 +250,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Current liabilities',
             'account_code' => 21,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$currentLiabilities->parent_id) $currentLiabilities->appendToNode($liabilities)->save();
 
@@ -261,7 +261,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Accounts payable',
             'account_code' => 211,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$accountsPayable->parent_id) $accountsPayable->appendToNode($currentLiabilities)->save();
 
@@ -272,7 +272,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Other creditors',
             'account_code' => 2111,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$otherCreditors->parent_id) $otherCreditors->appendToNode($currentLiabilities)->save();
 
@@ -283,7 +283,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'supplier',
             'account_code' => 2112,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$suppliers->parent_id)  $suppliers->appendToNode($accountsPayable)->save();
 
@@ -294,7 +294,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Default supplier',
             'account_code' => 21121,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$defaultSupplier->parent_id) $defaultSupplier->appendToNode($suppliers)->save();
 
@@ -305,7 +305,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Short-term loans',
             'account_code' => 2113,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$shortTtermLoans->parent_id)  $shortTtermLoans->appendToNode($accountsPayable)->save();
 
@@ -316,7 +316,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Notes payable',
             'account_code' => 2114,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$notesPayable->parent_id)  $notesPayable->appendToNode($accountsPayable)->save();
 
@@ -327,7 +327,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Revenue received in advance',
             'account_code' => 2116,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$revenueReceivedInAdvance->parent_id)  $revenueReceivedInAdvance->appendToNode($accountsPayable)->save();
 
@@ -339,7 +339,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Long-term Liabilities',
             'account_code' => 22,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$longTermLiabilities->parent_id)  $longTermLiabilities->appendToNode($liabilities)->save();
 
@@ -350,7 +350,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Long-term loans',
             'account_code' => 221,
             'account_nature' => 'credit',
-            'account_type' => 2
+            'account_category' => 2
         ]);
         if (!$longTermLoans->parent_id)   $longTermLoans->appendToNode($longTermLiabilities)->save();
 
@@ -362,7 +362,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Capital',
             'account_code' => 31,
             'account_nature' => 'credit',
-            'account_type' => 3
+            'account_category' => 3
         ]);
         if (!$capital->parent_id)  $capital->appendToNode($equity)->save();
 
@@ -373,7 +373,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Owner drawings',
             'account_code' => 32,
             'account_nature' => 'credit',
-            'account_type' => 3
+            'account_category' => 3
         ]);
         if (!$ownerDrawings->parent_id)  $ownerDrawings->appendToNode($equity)->save();
 
@@ -384,7 +384,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Owner current account',
             'account_code' => 33,
             'account_nature' => 'credit',
-            'account_type' => 3
+            'account_category' => 3
         ]);
         if (!$ownerCurrentAccount->parent_id)  $ownerCurrentAccount->appendToNode($equity)->save();
 
@@ -395,7 +395,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Reserves',
             'account_code' => 34,
             'account_nature' => 'credit',
-            'account_type' => 3
+            'account_category' => 3
         ]);
         if (!$reserves->parent_id)  $reserves->appendToNode($equity)->save();
 
@@ -406,7 +406,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Retained earnings',
             'account_code' => 35,
             'account_nature' => 'credit',
-            'account_type' => 3
+            'account_category' => 3
         ]);
         if (!$retainedEarnings->parent_id)  $retainedEarnings->appendToNode($equity)->save();
 
@@ -418,7 +418,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Main activity revenue',
             'account_code' => 41,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$mainActivityRevenue->parent_id)  $mainActivityRevenue->appendToNode($income)->save();
 
@@ -429,7 +429,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Sales',
             'account_code' => 411,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$sales->parent_id)  $sales->appendToNode($mainActivityRevenue)->save();
 
@@ -440,7 +440,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Sales refund',
             'account_code' => 412,
             'account_nature' => 'debit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$salesRefund->parent_id)  $salesRefund->appendToNode($mainActivityRevenue)->save();
 
@@ -451,7 +451,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Discount on sales',
             'account_code' => 413,
             'account_nature' => 'debit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$discountOnSales->parent_id)  $discountOnSales->appendToNode($mainActivityRevenue)->save();
 
@@ -462,7 +462,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Sales tax',
             'account_code' => 414,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$salesTax->parent_id)  $salesTax->appendToNode($mainActivityRevenue)->save();
 
@@ -474,7 +474,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Other income',
             'account_code' => 42,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$otherIncome->parent_id)  $otherIncome->appendToNode($income)->save();
 
@@ -485,7 +485,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Investment revenue',
             'account_code' => 421,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$investmentRevenue->parent_id)  $investmentRevenue->appendToNode($otherIncome)->save();
 
@@ -496,7 +496,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Rental income',
             'account_code' => 422,
             'account_nature' => 'credit',
-            'account_type' => 4
+            'account_category' => 4
         ]);
         if (!$rentalIncome->parent_id)  $rentalIncome->appendToNode($otherIncome)->save();
 
@@ -509,7 +509,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Sales cost',
             'account_code' => 51,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$saleCost->parent_id)  $saleCost->appendToNode($expenses)->save();
 
@@ -520,7 +520,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Purchases',
             'account_code' => 511,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$purchases->parent_id)  $purchases->appendToNode($saleCost)->save();
 
@@ -531,7 +531,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Purchases cost',
             'account_code' => 512,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$purchasesCost->parent_id)  $purchasesCost->appendToNode($saleCost)->save();
 
@@ -542,7 +542,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Purchase returns',
             'account_code' => 513,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$purchaseReturn->parent_id)  $purchaseReturn->appendToNode($saleCost)->save();
 
@@ -553,7 +553,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Purchase discount',
             'account_code' => 514,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$purchaseDiscount->parent_id)  $purchaseDiscount->appendToNode($saleCost)->save();
 
@@ -564,7 +564,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Purchase tax',
             'account_code' => 515,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$purchaseTax->parent_id)  $purchaseTax->appendToNode($saleCost)->save();
 
@@ -577,7 +577,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Selling and marketing expenses',
             'account_code' => 52,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$sellingAndMarketingExpenses->parent_id)  $sellingAndMarketingExpenses->appendToNode($expenses)->save();
 
@@ -588,7 +588,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Sale expenses',
             'account_code' => 521,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$saleExpenses->parent_id)  $saleExpenses->appendToNode($sellingAndMarketingExpenses)->save();
 
@@ -599,7 +599,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Sale commissions',
             'account_code' => 522,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$saleCommissions->parent_id)  $saleCommissions->appendToNode($sellingAndMarketingExpenses)->save();
 
@@ -610,7 +610,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Advertising',
             'account_code' => 523,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$advertising->parent_id)  $advertising->appendToNode($sellingAndMarketingExpenses)->save();
 
@@ -622,7 +622,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'General and administrative expenses',
             'account_code' => 53,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$genralAndAdministrativeExpenses->parent_id)  $genralAndAdministrativeExpenses->appendToNode($expenses)->save();
 
@@ -633,7 +633,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Salaries',
             'account_code' => 531,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$salaries->parent_id)  $salaries->appendToNode($genralAndAdministrativeExpenses)->save();
 
@@ -644,7 +644,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Rent',
             'account_code' => 532,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$rent->parent_id)  $rent->appendToNode($genralAndAdministrativeExpenses)->save();
 
@@ -655,7 +655,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Maintenance',
             'account_code' => 533,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$maintenance->parent_id)  $maintenance->appendToNode($genralAndAdministrativeExpenses)->save();
 
@@ -666,7 +666,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Phone and internet',
             'account_code' => 534,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$phoneAndInternet->parent_id)  $phoneAndInternet->appendToNode($genralAndAdministrativeExpenses)->save();
 
@@ -677,7 +677,7 @@ class AccountTreeSeeder extends Seeder
             'name_en' => 'Electricity',
             'account_code' => 535,
             'account_nature' => 'debit',
-            'account_type' => 5
+            'account_category' => 5
         ]);
         if (!$electricity->parent_id)  $electricity->appendToNode($genralAndAdministrativeExpenses)->save();
     }

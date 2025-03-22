@@ -2,10 +2,12 @@
 
 namespace Modules\AccountTree\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use Modules\AccountTree\Models\AccountTree;
-use Modules\AccountTree\Resources\AccountResource;
+use Modules\AccountTree\Resources\AccountsTreeResource;
+use Modules\AccountTree\Resources\AccountTreeDetailsResource;
+use Modules\AccountTree\Services\AccountTreeService;
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
@@ -13,13 +15,20 @@ use Modules\Common\Traits\ApiResponse;
 class AccountTreeController extends ApiController
 {
     use ApiResponse;
+    protected $accountTreeService;
+
+    public function __construct(AccountTreeService $accountTreeService)
+    {
+        parent::__construct();
+        $this->accountTreeService = $accountTreeService;
+    }
 
     public function index()
     {
-        $accountTree = AccountTree::defaultOrder()->get()->toTree();
+        $accountsTree = $this->accountTreeService->getAccountsTree();
 
         return $this->sendResponse(
-            AccountResource::collection($accountTree),
+            AccountsTreeResource::collection($accountsTree),
             __('Data fetched successfully'),
             StatusCodeEnum::Success->value
         );
@@ -27,12 +36,18 @@ class AccountTreeController extends ApiController
 
     public function store(Request $request)
     {
-        //
+        $parent = $this->accountTreeService->create($request);
     }
 
     public function show($id)
     {
-        //
+        $accountTree = $this->accountTreeService->getAccountTreeDetails($id);
+
+        return $this->sendResponse(
+            AccountTreeDetailsResource::make($accountTree),
+            __('Data fetched successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
     public function update(Request $request, $id)

@@ -2,7 +2,6 @@
 
 namespace $CLASS_NAMESPACE$;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;

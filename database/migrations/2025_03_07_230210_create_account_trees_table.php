@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name_ar')->nullable();
             $table->string('name_en')->nullable();
             $table->enum('account_nature', ['debit', 'credit', 'both']);
-            $table->unsignedTinyInteger('account_type')
+            $table->unsignedTinyInteger('account_category')
                 ->comment('1: Asset, 2: Liability, 3: Equity, 4: Income, 5: Expense');
             $table->boolean('allow_delete')->default(0);
             $table->boolean('is_active')->default(1);

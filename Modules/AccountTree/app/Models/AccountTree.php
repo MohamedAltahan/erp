@@ -5,6 +5,7 @@ namespace Modules\AccountTree\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Kalnoy\Nestedset\NodeTrait;
+use Modules\Common\Traits\Filterable;
 use Modules\Common\Traits\HasLocalizedName;
 use Spatie\Translatable\HasTranslations;
 
@@ -14,13 +15,14 @@ class AccountTree extends Model
     use NodeTrait;
     use HasTranslations;
     use HasLocalizedName;
+    use Filterable;
 
     public $translatable = ['description'];
 
     protected $fillable = [
         'account_code',
         'account_nature',
-        'account_type',
+        'account_category',
         'allow_delete',
         'is_active',
         'name_ar',
@@ -31,6 +33,7 @@ class AccountTree extends Model
 
     protected $casts = [
         'name' => 'array',
+        'description' => 'array',
     ];
 
     //accessors

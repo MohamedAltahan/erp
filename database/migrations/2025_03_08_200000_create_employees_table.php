@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('name_en')->nullable();
             $table->foreignId('account_code')->nullable()->constrained('account_trees', 'account_code')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('main_account_code')->nullable()->constrained('account_trees', 'account_code')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('branch_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('branch_id')->constrained()->onDelete('restrict')->onUpdate('restrict');
             $table->string('username')->unique();
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
-            $table->unsignedTinyInteger('role')->default(EmployeeRoleEnum::Employee);
+            $table->unsignedTinyInteger('role')->default(EmployeeRoleEnum::Employee)->comment('1: SuperAdmin, 2: Admin, 3: Employee');
             $table->json('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -2,7 +2,9 @@
 
 namespace Modules\Employee\Services;
 
+use Modules\Common\Enums\EmployeeRoleEnum;
 use Modules\Common\Enums\ImageQuality;
+use Modules\Common\Filters\Search;
 use Modules\Common\Traits\UploadFile;
 use Modules\Employee\Http\Requests\EmployeeRequest;
 use Modules\Employee\Models\Employee;
@@ -10,6 +12,11 @@ use Modules\Employee\Models\Employee;
 class EmployeeService
 {
     use UploadFile;
+
+    public function getPaginatedEmployees($perPage)
+    {
+        return Employee::filter([Search::class])->paginate($perPage);
+    }
 
     public function create(EmployeeRequest $request)
     {
@@ -23,5 +30,14 @@ class EmployeeService
         $employeeData = $request->validated();
         $employeeData['avatar'] = $this->fileUpdate('avatar', 'avatar', 'public', $employee->avatar, ImageQuality::Low->value);
         $employee->update($employeeData);
+    }
+
+    public function destroy(Employee $employee)
+    {
+        if ($employee->role == EmployeeRoleEnum::SuperAdmin) {
+            return false;
+        }
+
+        return $employee->delete();
     }
 }

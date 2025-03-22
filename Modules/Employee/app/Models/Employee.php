@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Testing\Fluent\Concerns\Has;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Common\Enums\EmployeeRoleEnum;
+use Modules\Common\Traits\Filterable;
 use Modules\Common\Traits\HasLocalizedName;
 use Spatie\Translatable\HasTranslations;
 
@@ -14,7 +15,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Employee extends Authenticatable
 {
-    use HasApiTokens, Notifiable, HasTranslations, HasLocalizedName;
+    use HasApiTokens, Notifiable, HasTranslations, HasLocalizedName, Filterable;
     protected $translatable = ['description', 'address'];
 
     protected $fillable = [

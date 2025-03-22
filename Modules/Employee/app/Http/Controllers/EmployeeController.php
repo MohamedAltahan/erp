@@ -14,11 +14,19 @@ use Modules\Employee\Services\EmployeeService;
 
 class EmployeeController extends ApiController
 {
-    use ApiResponse, UploadFile;
+    use ApiResponse;
+
+    protected $employeeService;
+
+    public function __construct(EmployeeService $employeeService)
+    {
+        parent::__construct();
+        $this->employeeService = $employeeService;
+    }
 
     public function index()
     {
-        $employees = Employee::paginate($this->perPage);
+        $employees = $this->employeeService->getPaginatedEmployees($this->perPage);
 
         return $this->sendResponse(
             EmployeeResource::paginate($employees),
@@ -27,9 +35,9 @@ class EmployeeController extends ApiController
         );
     }
 
-    public function store(EmployeeRequest $request, EmployeeService $employeeService)
+    public function store(EmployeeRequest $request)
     {
-        $employeeService->create($request);
+        $this->employeeService->create($request);
 
         return $this->sendResponse(
             [],
@@ -47,9 +55,9 @@ class EmployeeController extends ApiController
         );
     }
 
-    public function update(EmployeeRequest $request, Employee $employee, EmployeeService $employeeService)
+    public function update(EmployeeRequest $request, Employee $employee)
     {
-        $employeeService->update($request, $employee);
+        $this->employeeService->update($request, $employee);
 
         return $this->sendResponse(
             [],
@@ -60,15 +68,15 @@ class EmployeeController extends ApiController
 
     public function destroy(Employee $employee)
     {
-        if ($employee->role == EmployeeRoleEnum::SuperAdmin) {
+        $deleted = $this->employeeService->destroy($employee);
+
+        if (!$deleted) {
             return $this->sendResponse(
                 [],
                 __('Super admin can not be deleted'),
                 StatusCodeEnum::Success->value
             );
         }
-
-        $employee->delete();
 
         return $this->sendResponse(
             [],

@@ -7,6 +7,7 @@ use Modules\Branch\Http\Resources\BranchResource;
 use Modules\Branch\Models\Branch;
 use Modules\Branch\Services\BranchService;
 use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Filters\Search;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
 use Modules\Employee\Models\Employee;
@@ -15,9 +16,17 @@ class BranchController extends ApiController
 {
     use ApiResponse;
 
+    protected $branchService;
+
+    public function __construct(BranchService $branchService)
+    {
+        parent::__construct();
+        $this->branchService = $branchService;
+    }
+
     public function index()
     {
-        $branchs = Branch::paginate($this->perPage);
+        $branchs = $this->branchService->getPaginatedBranchs($this->perPage);
 
         return $this->sendResponse(
             BranchResource::paginate($branchs),
@@ -59,7 +68,7 @@ class BranchController extends ApiController
 
     public function destroy(Branch $branch)
     {
-        $branch->delete();
+        $this->branchService->destroy($branch);
 
         return $this->sendResponse(
             [],

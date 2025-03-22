@@ -13,6 +13,6 @@ class ApiController extends Controller
 
     public function __construct()
     {
-        $this->perPage = request('per_page') ?? 10;
+        $this->perPage = request()->input('per_page', 10);
     }
 }
