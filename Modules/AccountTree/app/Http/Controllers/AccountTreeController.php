@@ -2,9 +2,7 @@
 
 namespace Modules\AccountTree\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Modules\AccountTree\Http\Requests\AccountTreeRequest;
-use Modules\AccountTree\Models\AccountTree;
 use Modules\AccountTree\Resources\AccountsTreeResource;
 use Modules\AccountTree\Resources\AccountTreeDetailsResource;
 use Modules\AccountTree\Services\AccountTreeService;
@@ -60,6 +58,7 @@ class AccountTreeController extends ApiController
     public function update(AccountTreeRequest $request, $id)
     {
         $this->accountTreeService->update($request, $id);
+
         return $this->sendResponse(
             [],
             __('Data updated successfully'),

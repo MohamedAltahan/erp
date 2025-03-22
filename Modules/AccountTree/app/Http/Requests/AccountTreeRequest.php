@@ -20,14 +20,14 @@ class AccountTreeRequest extends ApiRequest
                 Rule::requiredIf($this->input('name_en') == null),
                 'string',
                 'max:50',
-                Rule::unique('account_trees', 'name_ar')->ignore($accountTree_id)
+                Rule::unique('account_trees', 'name_ar')->ignore($accountTree_id),
             ],
             'name_en' => [
                 'nullable',
                 Rule::requiredIf($this->input('name_ar') == null),
                 'string',
                 'max:50',
-                Rule::unique('account_trees', 'name_en')->ignore($accountTree_id)
+                Rule::unique('account_trees', 'name_en')->ignore($accountTree_id),
 
             ],
             'description' => 'nullable|array|max:300',

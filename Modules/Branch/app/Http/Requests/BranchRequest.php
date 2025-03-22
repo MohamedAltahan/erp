@@ -18,14 +18,14 @@ class BranchRequest extends ApiRequest
                 Rule::requiredIf($this->input('name_en') == null),
                 'string',
                 'max:50',
-                Rule::unique('branches', 'name_ar')->ignore($branch_id)
+                Rule::unique('branches', 'name_ar')->ignore($branch_id),
             ],
             'name_en' => [
                 'nullable',
                 Rule::requiredIf($this->input('name_ar') == null),
                 'string',
                 'max:50',
-                Rule::unique('branches', 'name_en')->ignore($branch_id)
+                Rule::unique('branches', 'name_en')->ignore($branch_id),
             ],
             'phone' => ['nullable', 'string', 'max:20', Rule::unique('branches', 'phone')->ignore($branch_id)],
             'address' => 'nullable|array|max:300',
