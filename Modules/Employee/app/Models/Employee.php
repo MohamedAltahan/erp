@@ -8,13 +8,14 @@ use Laravel\Sanctum\HasApiTokens;
 use Modules\Common\Enums\EmployeeRoleEnum;
 use Modules\Common\Traits\Filterable;
 use Modules\Common\Traits\HasLocalizedName;
+use Spatie\Permission\Traits\HasRoles;
 use Spatie\Translatable\HasTranslations;
 
 // use Modules\Employee\Database\Factories\EmployeeFactory;
 
 class Employee extends Authenticatable
 {
-    use Filterable, HasApiTokens, HasLocalizedName, HasTranslations, Notifiable;
+    use Filterable, HasApiTokens, HasLocalizedName, HasTranslations, Notifiable, HasRoles;
 
     protected $translatable = ['description', 'address'];
 
