@@ -2,18 +2,10 @@
 
 namespace Modules\Branch\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Modules\Common\Traits\Filterable;
-use Modules\Common\Traits\HasLocalizedName;
-use Spatie\Translatable\HasTranslations;
+use Modules\Common\Models\BaseModel;
 
-// use Modules\$MODULE$\Database\Factories\$NAME$Factory;
-
-class Branch extends Model
+class Branch extends BaseModel
 {
-    use Filterable, HasFactory, HasLocalizedName, HasTranslations;
-
     public $timestamps = false;
 
     protected $translatable = ['description', 'address'];

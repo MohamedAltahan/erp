@@ -3,8 +3,11 @@
 namespace Modules\Common\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Common\Fillters\Filterable;
+use Modules\Common\Traits\Filterable;
+use Modules\Common\Traits\HasLocalizedName;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * @mixin Builder
@@ -13,4 +16,7 @@ use Modules\Common\Fillters\Filterable;
 class BaseModel extends Model
 {
     use Filterable;
+    use HasFactory;
+    use HasLocalizedName;
+    use HasTranslations;
 }

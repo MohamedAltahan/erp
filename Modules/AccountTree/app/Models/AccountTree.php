@@ -2,19 +2,11 @@
 
 namespace Modules\AccountTree\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
-use Modules\Common\Traits\Filterable;
-use Modules\Common\Traits\HasLocalizedName;
-use Spatie\Translatable\HasTranslations;
+use Modules\Common\Models\BaseModel;
 
-class AccountTree extends Model
+class AccountTree extends BaseModel
 {
-    use Filterable;
-    use HasFactory;
-    use HasLocalizedName;
-    use HasTranslations;
     use NodeTrait;
 
     public $translatable = ['description'];

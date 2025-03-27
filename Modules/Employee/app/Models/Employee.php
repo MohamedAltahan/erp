@@ -2,20 +2,17 @@
 
 namespace Modules\Employee\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Common\Enums\EmployeeRoleEnum;
-use Modules\Common\Traits\Filterable;
-use Modules\Common\Traits\HasLocalizedName;
+use Modules\Common\Models\BaseModel;
 use Spatie\Permission\Traits\HasRoles;
-use Spatie\Translatable\HasTranslations;
 
 // use Modules\Employee\Database\Factories\EmployeeFactory;
 
-class Employee extends Authenticatable
+class Employee extends BaseModel
 {
-    use Filterable, HasApiTokens, HasLocalizedName, HasTranslations, Notifiable, HasRoles;
+    use HasApiTokens, HasRoles, Notifiable;
 
     protected $translatable = ['description', 'address'];
 
