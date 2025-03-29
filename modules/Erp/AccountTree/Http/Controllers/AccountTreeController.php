@@ -6,9 +6,9 @@ use Modules\Erp\AccountTree\Http\Requests\AccountTreeRequest;
 use Modules\Erp\AccountTree\Resources\AccountsTreeResource;
 use Modules\Erp\AccountTree\Resources\AccountTreeDetailsResource;
 use Modules\Erp\AccountTree\Services\AccountTreeService;
-use Modules\Erp\Common\Enums\StatusCodeEnum;
-use Modules\Erp\Common\Http\Controllers\ApiController;
-use Modules\Erp\Common\Traits\ApiResponse;
+use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
 
 class AccountTreeController extends ApiController
 {

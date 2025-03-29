@@ -2,7 +2,7 @@
 
 namespace Modules\Erp\Branch\Models;
 
-use Modules\Erp\Common\Models\BaseModel;
+use Modules\Common\Models\BaseModel;
 
 class Branch extends BaseModel
 {

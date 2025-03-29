@@ -3,7 +3,7 @@
 namespace Modules\Erp\Branch\Http\Requests;
 
 use Illuminate\Validation\Rule;
-use Modules\Erp\Common\Http\Requests\ApiRequest;
+use Modules\Common\Http\Requests\ApiRequest;
 
 class BranchRequest extends ApiRequest
 {

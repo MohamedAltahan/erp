@@ -6,9 +6,9 @@ use Modules\Erp\Branch\Http\Requests\BranchRequest;
 use Modules\Erp\Branch\Http\Resources\BranchResource;
 use Modules\Erp\Branch\Models\Branch;
 use Modules\Erp\Branch\Services\BranchService;
-use Modules\Erp\Common\Enums\StatusCodeEnum;
-use Modules\Erp\Common\Http\Controllers\ApiController;
-use Modules\Erp\Common\Traits\ApiResponse;
+use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
 
 class BranchController extends ApiController
 {

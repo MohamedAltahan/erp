@@ -3,8 +3,8 @@
 namespace Modules\Admin\Tenant\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Modules\Erp\Common\Http\Controllers\ApiController;
-use Modules\Erp\Common\Traits\ApiResponse;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
 
 class TenantController extends ApiController
 {

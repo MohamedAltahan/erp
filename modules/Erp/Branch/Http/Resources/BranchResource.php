@@ -4,7 +4,7 @@ namespace Modules\Erp\Branch\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Modules\Erp\Common\Traits\HasPagination;
+use Modules\Common\Traits\HasPagination;
 
 class BranchResource extends JsonResource
 {

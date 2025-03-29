@@ -5,10 +5,10 @@ namespace Modules\Erp\Auth\Http\Controllers;
 use Illuminate\Http\Request;
 use Modules\Erp\Auth\Http\Requests\LoginRequest;
 use Modules\Erp\Auth\Services\AuthService;
-use Modules\Erp\Common\Enums\StatusCodeEnum;
-use Modules\Erp\Common\Http\Controllers\ApiController;
-use Modules\Erp\Common\Traits\ApiResponse;
-use Modules\Erp\Employee\Http\Resources\EmployeeResource;
+use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
+use Modules\Erp\User\Http\Resources\UserResource;
 
 class AuthController extends ApiController
 {
@@ -28,7 +28,7 @@ class AuthController extends ApiController
 
         return $this->sendResponse(
             [
-                'user' => EmployeeResource::make($user),
+                'user' => UserResource::make($user),
                 'token' => $user->createToken('auth_token')->plainTextToken,
             ],
             __('Loged in successfully'),

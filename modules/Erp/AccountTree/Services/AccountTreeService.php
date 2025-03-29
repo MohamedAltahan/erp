@@ -3,7 +3,7 @@
 namespace Modules\Erp\AccountTree\Services;
 
 use Modules\Erp\AccountTree\Models\AccountTree;
-use Modules\Erp\Common\Filters\Search;
+use Modules\Common\Filters\Search;
 
 class AccountTreeService
 {

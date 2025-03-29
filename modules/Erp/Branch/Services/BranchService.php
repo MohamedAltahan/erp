@@ -5,7 +5,7 @@ namespace Modules\Erp\Branch\Services;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Modules\Erp\Branch\Models\Branch;
-use Modules\Erp\Common\Filters\Search;
+use Modules\Common\Filters\Search;
 
 class BranchService
 {
@@ -22,8 +22,8 @@ class BranchService
 
     public function update(Request $request, Model $model)
     {
-        $employeeData = $request->validated();
-        $model->update($employeeData);
+        $userData = $request->validated();
+        $model->update($userData);
     }
 
     public function destroy(Branch $branch)

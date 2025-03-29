@@ -3,9 +3,9 @@
 namespace Modules\Erp\AccountTree\Http\Requests;
 
 use Illuminate\Validation\Rule;
-use Modules\Erp\Common\Enums\AccountTree\AccountTreeCategoryEnum;
-use Modules\Erp\Common\Enums\AccountTree\AccountTreeNatureEnum;
-use Modules\Erp\Common\Http\Requests\ApiRequest;
+use Modules\Common\Enums\AccountTree\AccountTreeCategoryEnum;
+use Modules\Common\Enums\AccountTree\AccountTreeNatureEnum;
+use Modules\Common\Http\Requests\ApiRequest;
 
 class AccountTreeRequest extends ApiRequest
 {

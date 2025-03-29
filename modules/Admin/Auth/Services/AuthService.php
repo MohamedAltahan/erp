@@ -1,20 +1,23 @@
 <?php
 
-namespace Modules\Erp\Auth\Services;
+namespace Modules\Admin\Auth\Services;
 
 use Illuminate\Support\Facades\Auth;
-use Modules\Erp\Auth\Http\Requests\LoginRequest;
+use Modules\Admin\Auth\Http\Requests\LoginRequest;
+use Modules\Common\Enums\GuardEnum;
 
 class AuthService
 {
     public static function login(LoginRequest $request)
     {
-        if (Auth::guard('web')->attempt([
+        $guard = Auth::guard(GuardEnum::adminSession->value);
+
+        if ($guard->attempt([
             'username' => $request->username,
             'password' => $request->password,
         ])) {
-            $user = Auth::user();
 
+            $user = $guard->user();
             return $user;
         } else {
             return false;

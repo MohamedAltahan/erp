@@ -3,7 +3,7 @@
 namespace Modules\Erp\AccountTree\Models;
 
 use Kalnoy\Nestedset\NodeTrait;
-use Modules\Erp\Common\Models\BaseModel;
+use Modules\Common\Models\BaseModel;
 
 class AccountTree extends BaseModel
 {

@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             [
                 AccountTreeSeeder::class,
                 BranchSeeder::class,
-                EmployeeSeeder::class,
+                UserSeeder::class,
             ]
         );
     }

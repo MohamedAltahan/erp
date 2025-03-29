@@ -33,8 +33,9 @@
     "autoload": {
         "psr-4": {
             "Modules\\Erp\\": "modules/Erp/",
-            "Modules\\Admin\\": "modules/admin/",
-            "Modules\\Website\\": "modules/website/",
+            "Modules\\Admin\\": "modules/Admin/",
+            "Modules\\Website\\": "modules/Website/",
+            "Modules\\Common\\": "modules/Common/",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
@@ -73,9 +74,7 @@
             ]
         },
         "merge-plugin": {
-            "include": [
-                "modules/Erp/Auth/composer.json"
-            ]
+            "include": []
         }
     },
     "config": {

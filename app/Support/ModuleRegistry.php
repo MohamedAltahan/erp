@@ -10,7 +10,7 @@ class ModuleRegistry
             'Auth',
             'Branch',
             'AccountTree',
-            'Employee',
+            'User',
         ];
     }
 
