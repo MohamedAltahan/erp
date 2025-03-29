@@ -1,6 +1,6 @@
 <?php
 
-use Modules\Employee\Models\Employee;
+use Modules\Erp\Employee\Models\Employee;
 
 return [
 

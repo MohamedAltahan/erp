@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Common\Enums\EmployeeRoleEnum;
+use Modules\Erp\Common\Enums\EmployeeRoleEnum;
 
 return new class extends Migration
 {

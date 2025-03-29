@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Modules\Common\Enums\EmployeeRoleEnum;
-use Modules\Employee\Models\Employee;
+use Modules\Erp\Common\Enums\EmployeeRoleEnum;
+use Modules\Erp\Employee\Models\Employee;
 
 class EmployeeSeeder extends Seeder
 {

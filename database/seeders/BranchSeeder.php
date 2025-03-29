@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Branch\Models\Branch;
+use Modules\Erp\Branch\Models\Branch;
 
 class BranchSeeder extends Seeder
 {

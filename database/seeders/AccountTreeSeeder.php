@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\AccountTree\Models\AccountTree;
+use Modules\Erp\AccountTree\Models\AccountTree;
 
 class AccountTreeSeeder extends Seeder
 {
