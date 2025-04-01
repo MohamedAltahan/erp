@@ -21,7 +21,7 @@ class UserService
     public function create(UserRequest $request)
     {
         $userData = $request->validated();
-        $userData['name'] = $userData['username'];
+        $userData['name'] = $request->username;
         return  User::create($userData);
     }
 

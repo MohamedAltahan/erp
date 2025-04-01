@@ -3,6 +3,7 @@
 namespace Database\Seeders\TenantSeeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class TenantDatabaseSeeder extends Seeder
@@ -14,9 +15,9 @@ class TenantDatabaseSeeder extends Seeder
     {
         $this->call(
             [
-                // AccountTreeSeeder::class,
-                // BranchSeeder::class,
-                // UserSeeder::class,
+                AccountTreeSeeder::class,
+                BranchSeeder::class,
+                UserSeeder::class,
             ]
         );
     }

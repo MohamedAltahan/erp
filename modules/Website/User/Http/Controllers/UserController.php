@@ -2,6 +2,7 @@
 
 namespace Modules\Website\User\Http\Controllers;
 
+use Modules\Admin\Tenant\Models\Tenant;
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
@@ -36,6 +37,20 @@ class UserController extends ApiController
     public function store(UserRequest $request)
     {
         $user = $this->userService->create($request);
+
+        $tenant = Tenant::create([
+            'tenancy_db_name' => $request->subdomain,
+            'user_id' => $user->id,
+            'company_name' => $request->company_name,
+            'subdomain' => $request->subdomain,
+            'is_active' => 1,
+            'version' => 1,
+            'creating_status' => 1,
+        ]);
+
+        $tenant->domains()->create([
+            'domain' => $request->subdomain,
+        ]);
 
         return $this->sendResponse(
             UserResource::make($user),

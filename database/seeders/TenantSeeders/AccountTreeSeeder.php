@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\TenantSeeders;
 
 use Illuminate\Database\Seeder;
 use Modules\Erp\AccountTree\Models\AccountTree;

@@ -11,5 +11,20 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 {
     use HasDatabase, HasDomains;
 
-    protected $fillable = [];
+    // protected $fillable = [];
+    protected $guarded = [];
+
+    public static function getCustomColumns(): array
+    {
+        return [
+            'id',
+            'company_name',
+            'user_id',
+            'subdomain',
+            'is_active',
+            'version',
+            'creating_status',
+            'deleted_at',
+        ];
+    }
 }
