@@ -18,28 +18,23 @@ class User extends Authenticatable
     use HasApiTokens, HasRoles, Notifiable;
     use Filterable;
     use HasFactory;
-    use HasLocalizedName;
     use HasTranslations;
 
-    protected $translatable = ['description', 'address'];
+    protected $translatable = ['address'];
 
     protected $fillable = [
-        'name_ar',
-        'name_en',
+        'name',
         'username',
-        'branch_id',
         'phone',
         'email',
         'avatar',
         'password',
         'address',
-        'role',
         'status',
+        'company_name',
     ];
 
     protected $casts = [
-        'name' => 'array',
-        'role' => UserRoleEnum::class,
         'address' => 'array',
         'email_verified_at' => 'datetime',
         'password' => 'hashed',

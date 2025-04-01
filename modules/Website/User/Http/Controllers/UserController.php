@@ -1,14 +1,14 @@
 <?php
 
-namespace Modules\Erp\User\Http\Controllers;
+namespace Modules\Website\User\Http\Controllers;
 
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
-use Modules\Erp\User\Http\Requests\UserRequest;
-use Modules\Erp\User\Http\Resources\UserResource;
-use Modules\Erp\User\Models\User;
-use Modules\Erp\User\Services\UserService;
+use Modules\Website\User\Http\Requests\UserRequest;
+use Modules\Website\User\Http\Resources\UserResource;
+use Modules\Website\User\Models\User;
+use Modules\Website\User\Services\UserService;
 
 class UserController extends ApiController
 {
@@ -35,17 +35,19 @@ class UserController extends ApiController
 
     public function store(UserRequest $request)
     {
-        $this->userService->create($request);
+        $user = $this->userService->create($request);
 
         return $this->sendResponse(
-            [],
+            UserResource::make($user),
             __('Data created successfully'),
             StatusCodeEnum::Created_successfully->value
         );
     }
 
-    public function show(User $user)
+    public function show(int $id)
     {
+        $user = $this->userService->getUser($id);
+
         return $this->sendResponse(
             UserResource::make($user),
             __('Data fetched successfully'),
@@ -53,12 +55,12 @@ class UserController extends ApiController
         );
     }
 
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, int $id)
     {
-        $this->userService->update($request, $user);
+        $user = $this->userService->update($request, $id);
 
         return $this->sendResponse(
-            [],
+            UserResource::make($user),
             __('Data updated successfully'),
             StatusCodeEnum::Success->value
         );

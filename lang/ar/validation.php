@@ -177,6 +177,7 @@ return [
     */
 
     'attributes' => [
+        "company_name" => "اسم الشركة",
         'branch_id' => 'الفرع',
         'name_ar' => 'الاسم بالعربية',
         'name_en' => 'الاسم بالانجليزية',

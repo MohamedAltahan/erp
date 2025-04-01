@@ -2,5 +2,5 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    App\Providers\CustomModulesServiceProvider::class,
+    App\Providers\TenancyServiceProvider::class,
 ];

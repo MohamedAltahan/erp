@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Erp\User\Http\Resources;
+namespace Modules\Website\User\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -18,9 +18,7 @@ class UserResource extends JsonResource
             'username' => $this->username,
             'email' => $this->email,
             'phone' => $this->phone,
-            // 'account' => AccountInResource::make($this->accountTree),
             'avatar' => $this->avatar ? asset('storage/' . $this->avatar) : '',
-            'roles' => $this->role->name,
         ];
     }
 }

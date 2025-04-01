@@ -16,9 +16,5 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->append(SetLanguage::class);
     })
-    ->withExceptions(function (Exceptions $exceptions) {
-
-        // $exceptions->render(function (InvalidOrderException $e, Request $request) {
-        //     return response()->view('errors.invalid-order', status: 500);
-        // });
-    })->create();
+    ->withExceptions(function (Exceptions $exceptions) {})
+    ->create();

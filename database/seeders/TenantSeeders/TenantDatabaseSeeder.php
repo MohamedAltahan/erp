@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\TenantSeeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TenantDatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
                 // AccountTreeSeeder::class,
                 // BranchSeeder::class,
                 // UserSeeder::class,
-                AdminSeeder::class,
             ]
         );
     }

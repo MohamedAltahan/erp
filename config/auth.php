@@ -50,7 +50,7 @@ return [
 
         'website-users' => [
             'driver' => 'eloquent',
-            'model' =>  Modules\website\User\Models\User::class,
+            'model' =>  Modules\Website\User\Models\User::class,
         ],
 
     ],

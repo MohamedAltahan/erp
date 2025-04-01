@@ -1,14 +1,15 @@
 <?php
 
-namespace Modules\Admin\Auth\Http\Controllers;
+namespace Modules\Website\Auth\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Modules\Admin\Auth\Http\Requests\LoginRequest;
-use Modules\Admin\Auth\Services\AuthService;
+
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
-use Modules\Erp\User\Http\Resources\UserResource;
+use Modules\Website\Auth\Http\Requests\LoginRequest;
+use Modules\Website\Auth\Services\AuthService;
+use Modules\Website\User\Http\Resources\UserResource;
 
 class AuthController extends ApiController
 {
@@ -16,6 +17,7 @@ class AuthController extends ApiController
 
     public function login(LoginRequest $request, AuthService $authService)
     {
+
         $user = $authService->login($request);
 
         if (! $user) {

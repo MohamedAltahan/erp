@@ -18,12 +18,14 @@ class ModuleRegistry
     {
         return [
             'User',
+            'Auth',
         ];
     }
 
     public static function admin(): array
     {
         return [
+            'Auth',
             'Tenant',
         ];
     }

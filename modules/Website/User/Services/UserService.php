@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Erp\User\Services;
+namespace Modules\Website\User\Services;
 
 use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Enums\ImageQuality;
 use Modules\Common\Filters\Search;
 use Modules\Common\Traits\UploadFile;
-use Modules\Erp\User\Http\Requests\UserRequest;
-use Modules\Erp\User\Models\User;
+use Modules\Website\User\Http\Requests\UserRequest;
+use Modules\Website\User\Models\User;
 
 class UserService
 {
@@ -21,15 +21,21 @@ class UserService
     public function create(UserRequest $request)
     {
         $userData = $request->validated();
-        $userData['avatar'] = $this->uploadFile('avatar', 'avatar', 'public', ImageQuality::Low->value);
-        User::create($userData);
+        $userData['name'] = $userData['username'];
+        return  User::create($userData);
     }
 
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, int $id)
     {
+        $user = User::find($id);
         $userData = $request->validated();
         $userData['avatar'] = $this->fileUpdate('avatar', 'avatar', 'public', $user->avatar, ImageQuality::Low->value);
-        $user->update($userData);
+        return $user->update($userData);
+    }
+
+    public function getUser($id)
+    {
+        return User::find($id);
     }
 
     public function destroy(User $user)
