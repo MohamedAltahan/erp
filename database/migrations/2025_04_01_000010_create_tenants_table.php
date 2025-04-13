@@ -16,11 +16,12 @@ class CreateTenantsTable extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
             $table->string('company_name')->nullable()->unique();
-            $table->string('subdomain')->unique();
+            $table->string('domain')->unique()->comment('domain or subdomain name');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->boolean('is_active')->default(1);
             $table->string('version')->nullable();
-            $table->json('data')->nullable();
+            $table->foreignId('plan_id')->nullable()->constrained('plans')->onDelete('cascade')->onUpdate('cascade');
+            $table->json('data')->nullable()->comment('any additional tenant data');
             $table->string('creating_status')->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
