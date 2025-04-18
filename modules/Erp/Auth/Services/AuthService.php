@@ -11,7 +11,7 @@ class AuthService
 {
     public static function login(LoginRequest $request)
     {
-        $guard = Auth::guard(GuardEnum::erpSession->value);
+        $guard = Auth::guard(GuardEnum::ERPSESSION->value);
 
         if ($guard->attempt([
             'username' => $request->username,

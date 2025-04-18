@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
                 // AccountTreeSeeder::class,
                 // BranchSeeder::class,
                 // UserSeeder::class,
-                AdminSeeder::class,
+                // AdminSeeder::class,
+                TenantPermissionSeeder::class,
+                TenantSidebarSeeder::class
             ]
         );
     }

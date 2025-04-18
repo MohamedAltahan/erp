@@ -10,7 +10,7 @@ class AuthService
 {
     public static function login(LoginRequest $request)
     {
-        $guard = Auth::guard(GuardEnum::adminSession->value);
+        $guard = Auth::guard(GuardEnum::ADMINSESSION->value);
 
         if ($guard->attempt([
             'username' => $request->username,

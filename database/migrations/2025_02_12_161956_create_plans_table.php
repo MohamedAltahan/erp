@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
-            $table->json('name')->unique()->comment('e.g., Basic, Pro');
+            $table->json('name')->comment('e.g., Basic, Pro');
             $table->json('description')->nullable();
             $table->decimal('price', 10, 2);
             $table->decimal('price_after_discount', 10, 2)->nullable();

@@ -17,6 +17,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/telescope": "^5.5",
         "laravel/tinker": "^2.10.1",
+        "mpdf/mpdf": "^8.2",
         "spatie/laravel-permission": "^6.16",
         "spatie/laravel-translatable": "^6.11",
         "stancl/tenancy": "^3.9"

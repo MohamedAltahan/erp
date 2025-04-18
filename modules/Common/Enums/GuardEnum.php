@@ -7,13 +7,11 @@ enum GuardEnum: string
     case websiteSession = "website_session";
     case website = "website";
 
-    case adminSession = "admin_session";
+    case ADMINSESSION = "admin_session";
     case admin = "admin";
 
-    case erpSession = "erp_session";
-    case erp = "erp";
-
-    case OTPVerification = "otp_verifications";
+    case ERPSESSION = "erp_session";
+    case ERP = "erp";
 
     public function middleware(): string
     {

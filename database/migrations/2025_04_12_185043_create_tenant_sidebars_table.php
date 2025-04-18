@@ -16,7 +16,7 @@ return new class extends Migration
             $table->json('name');
             $table->string('slug')->unique();
             $table->string('route')->nullable();
-            $table->foreignId('parent_id')->nullable()->constrained('sidebars')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('parent_id')->nullable()->constrained('tenant_sidebars')->onDelete('cascade')->onUpdate('cascade');
             $table->string('icon')->nullable();
             $table->boolean('is_active')->default(1);
             $table->integer('order')->default(0);

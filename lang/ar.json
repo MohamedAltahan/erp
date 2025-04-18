@@ -10,5 +10,18 @@
     "Data fetched successfully": "تم جلب البيانات بنجاح",
     "Super admin can not be deleted": "لا يمكن حذف المدير العام",
     "debit": "مدين",
-    "credit": "دائن"
+    "credit": "دائن",
+
+    "edit": "تعديل",
+    "delete": "حذف",
+    "create": "إنشاء",
+    "show": "عرض",
+    "view": "عرض",
+    "view_any": "عرض كل",
+    "sale": "المبيعات",
+    "order": "الطلب",
+    "customer": "العميل",
+    "inventory": "المخزون",
+    "invoice": "الفاتورة",
+    "report": "التقارير"
 }

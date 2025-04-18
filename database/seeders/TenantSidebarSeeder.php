@@ -13,19 +13,20 @@ class TenantSidebarSeeder extends Seeder
 {
     public function run(): void
     {
-        $sidebarItems = config('TenantSidebar');
+        $sidebarItems = config('tenantSidebar');
 
         foreach ($sidebarItems as $sidebarItem) {
+            //parent
             $parent = TenantSidebar::updateOrCreate([
                 'name' => $sidebarItem['name'],
                 'slug' => $sidebarItem['slug'],
                 'route' => $sidebarItem['route'],
-                'parent_id' => $sidebarItem['parent_id'],
+                'parent_id' => null,
                 'icon' => $sidebarItem['icon'],
-                'is_active' => $sidebarItem['is_active'],
+                'is_active' => $sidebarItem['is_active'] ?? 1,
                 'order' => $sidebarItem['order'],
             ]);
-
+            //child
             foreach ($sidebarItem['children'] as $child) {
                 TenantSidebar::updateOrCreate([
                     'name' => $child['name'],
@@ -33,7 +34,7 @@ class TenantSidebarSeeder extends Seeder
                     'route' => $child['route'],
                     'parent_id' => $parent->id,
                     'icon' => $child['icon'],
-                    'is_active' => $child['is_active'],
+                    'is_active' => $child['is_active'] ?? 1,
                     'order' => $child['order'],
                 ]);
             }
