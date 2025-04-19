@@ -2,13 +2,13 @@
 
 namespace Modules\Erp\Branch\Http\Controllers;
 
+use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Http\Controllers\ApiController;
+use Modules\Common\Traits\ApiResponse;
 use Modules\Erp\Branch\Http\Requests\BranchRequest;
 use Modules\Erp\Branch\Http\Resources\BranchResource;
 use Modules\Erp\Branch\Models\Branch;
 use Modules\Erp\Branch\Services\BranchService;
-use Modules\Common\Enums\StatusCodeEnum;
-use Modules\Common\Http\Controllers\ApiController;
-use Modules\Common\Traits\ApiResponse;
 
 class BranchController extends ApiController
 {

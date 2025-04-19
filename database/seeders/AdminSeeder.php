@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Modules\Admin\Admin\Models\Admin;
 use Modules\Common\Enums\UserRoleEnum;
-use Modules\Erp\User\Models\User;
 
 class AdminSeeder extends Seeder
 {

@@ -2,7 +2,6 @@
 
 namespace Modules\Website\Auth\Services;
 
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
 use Modules\Common\Enums\GuardEnum;
 use Modules\Website\Auth\Http\Requests\LoginRequest;
@@ -18,6 +17,7 @@ class AuthService
             'password' => $request->password,
         ])) {
             $user = $guard->user();
+
             return $user;
         } else {
             return false;

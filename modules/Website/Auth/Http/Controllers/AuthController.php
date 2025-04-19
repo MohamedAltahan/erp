@@ -3,7 +3,6 @@
 namespace Modules\Website\Auth\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;

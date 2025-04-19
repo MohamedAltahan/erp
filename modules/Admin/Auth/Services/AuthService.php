@@ -18,6 +18,7 @@ class AuthService
         ])) {
 
             $user = $guard->user();
+
             return $user;
         } else {
             return false;

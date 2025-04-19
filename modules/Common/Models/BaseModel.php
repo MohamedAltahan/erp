@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Common\Traits\Filterable;
-use Modules\Common\Traits\HasLocalizedName;
 use Spatie\Translatable\HasTranslations;
 
 /**

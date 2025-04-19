@@ -12,8 +12,8 @@ class JsonNameSearch implements FilterContract
     public function handle(Builder $query, Closure $next)
     {
         return $next($query)->when(request()->has('name'), function ($query) {
-            $query->whereRaw('LOWER(name->"$.ar") LIKE ?', ['%' . strtolower(request('name')) . '%'])
-                ->orWhereRaw('LOWER(name->"$.en") LIKE ?', ['%' . strtolower(request('name')) . '%']);
+            $query->whereRaw('LOWER(name->"$.ar") LIKE ?', ['%'.strtolower(request('name')).'%'])
+                ->orWhereRaw('LOWER(name->"$.en") LIKE ?', ['%'.strtolower(request('name')).'%']);
         });
     }
 }

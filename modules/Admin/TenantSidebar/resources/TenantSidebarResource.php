@@ -16,7 +16,7 @@ class TenantSidebarResource extends JsonResource
             'icon' => $this->icon,
             'is_active' => $this->is_active,
             'order' => $this->order,
-            'children' => $this->children
+            'children' => $this->children,
         ];
     }
 }

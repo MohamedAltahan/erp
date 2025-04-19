@@ -2,8 +2,8 @@
 
 namespace Modules\Admin\Admin\Services;
 
-use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Enums\ImageQuality;
+use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Filters\Search;
 use Modules\Common\Traits\UploadFile;
 use Modules\Erp\User\Http\Requests\UserRequest;

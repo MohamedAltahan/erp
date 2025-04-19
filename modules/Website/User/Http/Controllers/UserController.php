@@ -39,7 +39,7 @@ class UserController extends ApiController
         $user = $this->userService->create($request);
 
         $tenant = Tenant::create([
-            'tenancy_db_name' => 'erp-' . $request->subdomain,
+            'tenancy_db_name' => 'erp-'.$request->subdomain,
             'user_id' => $user->id,
             'company_name' => $request->company_name,
             'subdomain' => $request->subdomain,

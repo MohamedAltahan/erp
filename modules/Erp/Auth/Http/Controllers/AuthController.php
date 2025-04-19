@@ -3,11 +3,11 @@
 namespace Modules\Erp\Auth\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Modules\Erp\Auth\Http\Requests\LoginRequest;
-use Modules\Erp\Auth\Services\AuthService;
 use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
+use Modules\Erp\Auth\Http\Requests\LoginRequest;
+use Modules\Erp\Auth\Services\AuthService;
 use Modules\Erp\User\Http\Resources\UserResource;
 
 class AuthController extends ApiController

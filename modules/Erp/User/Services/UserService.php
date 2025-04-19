@@ -2,9 +2,9 @@
 
 namespace Modules\Erp\User\Services;
 
-use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Enums\ImageQuality;
-use Modules\Common\Filters\Search;
+use Modules\Common\Enums\UserRoleEnum;
+use Modules\Common\Filters\Common\JsonNameSearch;
 use Modules\Common\Traits\UploadFile;
 use Modules\Erp\User\Http\Requests\UserRequest;
 use Modules\Erp\User\Models\User;
@@ -15,7 +15,7 @@ class UserService
 
     public function getPaginatedUsers($perPage)
     {
-        return User::filter([Search::class])->paginate($perPage);
+        return User::filter([JsonNameSearch::class])->paginate($perPage);
     }
 
     public function create(UserRequest $request)

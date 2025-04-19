@@ -3,11 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
-use Modules\Admin\Admin\Models\Admin;
 use Modules\Admin\TenantSidebar\Models\TenantSidebar;
-use Modules\Common\Enums\UserRoleEnum;
-use Modules\Erp\User\Models\User;
 
 class TenantSidebarSeeder extends Seeder
 {
@@ -16,7 +12,7 @@ class TenantSidebarSeeder extends Seeder
         $sidebarItems = config('tenantSidebar');
 
         foreach ($sidebarItems as $sidebarItem) {
-            //parent
+            // parent
             $parent = TenantSidebar::updateOrCreate([
                 'name' => $sidebarItem['name'],
                 'slug' => $sidebarItem['slug'],
@@ -26,7 +22,7 @@ class TenantSidebarSeeder extends Seeder
                 'is_active' => $sidebarItem['is_active'] ?? 1,
                 'order' => $sidebarItem['order'],
             ]);
-            //children
+            // children
             foreach ($sidebarItem['children'] as $child) {
                 TenantSidebar::updateOrCreate([
                     'name' => $child['name'],

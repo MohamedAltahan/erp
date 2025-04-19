@@ -2,8 +2,8 @@
 
 namespace Modules\Website\User\Services;
 
-use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Enums\ImageQuality;
+use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Filters\Search;
 use Modules\Common\Traits\UploadFile;
 use Modules\Website\User\Http\Requests\UserRequest;
@@ -22,7 +22,8 @@ class UserService
     {
         $userData = $request->validated();
         $userData['name'] = $request->username;
-        return  User::create($userData);
+
+        return User::create($userData);
     }
 
     public function update(UserRequest $request, int $id)
@@ -30,6 +31,7 @@ class UserService
         $user = User::find($id);
         $userData = $request->validated();
         $userData['avatar'] = $this->fileUpdate('avatar', 'avatar', 'public', $user->avatar, ImageQuality::Low->value);
+
         return $user->update($userData);
     }
 

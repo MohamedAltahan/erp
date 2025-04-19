@@ -2,8 +2,8 @@
 
 namespace Modules\Erp\AccountTree\Services;
 
-use Modules\Erp\AccountTree\Models\AccountTree;
 use Modules\Common\Filters\Search;
+use Modules\Erp\AccountTree\Models\AccountTree;
 
 class AccountTreeService
 {
@@ -26,7 +26,7 @@ class AccountTreeService
         }
         // auto generate account code
         $lastChild = $parentAccount->children()->orderByDesc('account_code')->first();
-        $account_code = $lastChild ? $lastChild->account_code + 1 : $parentAccount->account_code . 1;
+        $account_code = $lastChild ? $lastChild->account_code + 1 : $parentAccount->account_code. 1;
 
         $accountTree = AccountTree::create([
             'name_ar' => $request->name_ar,

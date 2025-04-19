@@ -2,10 +2,7 @@
 
 namespace Modules\Admin\TenantSidebar\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Modules\Admin\Tenant\Models\Tenant;
 use Modules\Admin\TenantSidebar\Http\Requests\TenantSidebarRequest;
-use Modules\Admin\TenantSidebar\Models\TenantSidebar;
 use Modules\Admin\TenantSidebar\Resources\TenantSidebarResource;
 use Modules\Admin\TenantSidebar\Services\TenantSidebarService;
 use Modules\Common\Enums\StatusCodeEnum;

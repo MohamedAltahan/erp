@@ -19,7 +19,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             // 'account' => AccountInResource::make($this->accountTree),
-            'avatar' => $this->avatar ? asset('storage/' . $this->avatar) : '',
+            'avatar' => $this->avatar ? asset('storage/'.$this->avatar) : '',
             'roles' => $this->role->name,
         ];
     }

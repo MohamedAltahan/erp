@@ -4,8 +4,8 @@ namespace Modules\Erp\Branch\Services;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Modules\Erp\Branch\Models\Branch;
 use Modules\Common\Filters\Search;
+use Modules\Erp\Branch\Models\Branch;
 
 class BranchService
 {

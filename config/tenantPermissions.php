@@ -7,7 +7,7 @@ return [
         'order',
         'customer',
         'invoice',
-        'report'
+        'report',
     ],
     'view_any' => [
         'inventory',
@@ -15,27 +15,27 @@ return [
         'order',
         'customer',
         'invoice',
-        'report'
+        'report',
     ],
     'create' => [
         'sale',
         'order',
         'customer',
         'invoice',
-        'inventory'
+        'inventory',
     ],
     'edit' => [
         'sale',
         'order',
         'customer',
         'inventory',
-        'invoice'
+        'invoice',
     ],
     'delete' => [
         'sale',
         'order',
         'customer',
         'inventory',
-        'invoice'
+        'invoice',
     ],
 ];

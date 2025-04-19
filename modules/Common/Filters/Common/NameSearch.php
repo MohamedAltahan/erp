@@ -14,9 +14,9 @@ class NameSearch implements FilterContract
         return $next($query)->when(request()->has('name'), function ($query) {
             // IN BOOLEAN MODE → Allows advanced search operators (+, -, *, "").
             // fallback to search using like
-            $query->whereRaw('MATCH(name_ar, name_en) AGAINST (? IN BOOLEAN MODE)', request('name') . '*')
-                ->orWhere('name_ar', 'LIKE', '%' . request('name') . '%')
-                ->orWhere('name_en', 'LIKE', '%' . request('name') . '%');
+            $query->whereRaw('MATCH(name_ar, name_en) AGAINST (? IN BOOLEAN MODE)', request('name').'*')
+                ->orWhere('name_ar', 'LIKE', '%'.request('name').'%')
+                ->orWhere('name_en', 'LIKE', '%'.request('name').'%');
         });
     }
 }
