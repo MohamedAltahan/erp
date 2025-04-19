@@ -17,8 +17,8 @@ class ModuleRegistry
     public static function website(): array
     {
         return [
-            'User',
             'Auth',
+            'User',
         ];
     }
 
@@ -27,6 +27,8 @@ class ModuleRegistry
         return [
             'Auth',
             'Tenant',
+            'TenantSidebar',
+            'TenantPermission',
         ];
     }
 }

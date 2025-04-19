@@ -26,7 +26,7 @@ class TenantSidebarSeeder extends Seeder
                 'is_active' => $sidebarItem['is_active'] ?? 1,
                 'order' => $sidebarItem['order'],
             ]);
-            //child
+            //children
             foreach ($sidebarItem['children'] as $child) {
                 TenantSidebar::updateOrCreate([
                     'name' => $child['name'],

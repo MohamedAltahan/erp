@@ -17,6 +17,5 @@ class BaseModel extends Model
 {
     use Filterable;
     use HasFactory;
-    use HasLocalizedName;
     use HasTranslations;
 }

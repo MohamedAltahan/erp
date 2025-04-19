@@ -3,6 +3,12 @@
 namespace Modules\Admin\TenantSidebar\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Modules\Admin\Tenant\Models\Tenant;
+use Modules\Admin\TenantSidebar\Http\Requests\TenantSidebarRequest;
+use Modules\Admin\TenantSidebar\Models\TenantSidebar;
+use Modules\Admin\TenantSidebar\Resources\TenantSidebarResource;
+use Modules\Admin\TenantSidebar\Services\TenantSidebarService;
+use Modules\Common\Enums\StatusCodeEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
 
@@ -12,22 +18,35 @@ class TenantSidebarController extends ApiController
 
     public function index()
     {
-        //
-    }
+        $sidebar = TenantSidebarService::getTenantSidebar();
 
-    public function store(Request $request)
-    {
-        //
+        return $this->sendResponse(
+            TenantSidebarResource::collection($sidebar),
+            __('Data fetched successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
     public function show($id)
     {
-        //
+        $sidebarItem = TenantSidebarService::getTenantSidebarItem($id);
+
+        return $this->sendResponse(
+            TenantSidebarResource::make($sidebarItem),
+            __('Data fetched successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
-    public function update(Request $request, $id)
+    public function update(TenantSidebarRequest $request, $id)
     {
-        //
+        $sidebarItem = TenantSidebarService::updateTenantSidebarItem($request, $id);
+
+        return $this->sendResponse(
+            TenantSidebarResource::make($sidebarItem),
+            __('Data updated successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
     public function destroy($id)

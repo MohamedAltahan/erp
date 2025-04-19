@@ -65,7 +65,6 @@ return [
             [
                 'name'       => ['ar' => 'أقسام القوائم المالية', 'en' => 'Financial Lists Sections'],
                 'slug'        => 'financial_statements_settings',
-
                 'route'       => '/financial-list-sections',
                 'icon'        => 'financial_statements_settings',
                 'order'        => 6, // already an integer in your data, left as-is

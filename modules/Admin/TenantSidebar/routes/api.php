@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Erp\Admin\Tenant\Http\Controllers\TenantController;
+use Modules\Admin\TenantSidebar\Http\Controllers\TenantSidebarController;
 
 
 Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
-    Route::apiResource('tenant', TenantController::class)->names('tenant');
+    Route::apiResource('tenant-sidebar', TenantSidebarController::class)->names('tenant-sidebar');
 });
