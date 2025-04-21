@@ -20,6 +20,7 @@ class Plan extends BaseModel
         'limits',
         'permissions',
         'sidebar_items',
+        'plan_id',
     ];
 
 

@@ -24,6 +24,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
             'is_active',
             'version',
             'creating_status',
+            'plan_id',
             'deleted_at',
         ];
     }

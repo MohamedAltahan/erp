@@ -46,7 +46,7 @@ class UserController extends ApiController
             'is_active' => 1,
             'version' => 1,
             'creating_status' => 1,
-            'plan_id' => 1,
+            'plan_id' => $request->plan_id,
         ]);
 
         $tenant->domains()->create([

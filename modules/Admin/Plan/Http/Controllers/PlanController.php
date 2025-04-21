@@ -43,15 +43,7 @@ class PlanController extends ApiController
 
     public function show($id)
     {
-        // $plan = $this->planService->getPlan($id);
-        $plan = DB::connection('admin')->table('plans')->where('id', 4)->first();
-
-        $permissions = json_decode($plan->permissions, true);
-
-        foreach ($permissions as $permission) {
-
-            dd($permission['title']);
-        }
+        $plan = $this->planService->getPlan($id);
 
         return $this->sendResponse(
             PlanResource::make($plan),
