@@ -20,7 +20,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
             'id',
             'company_name',
             'user_id',
-            'subdomain',
+            'domain',
             'is_active',
             'version',
             'creating_status',

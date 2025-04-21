@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Plan\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Modules\Admin\Plan\Http\Requests\PlanRequest;
 use Modules\Admin\Plan\Resources\PlanResource;
 use Modules\Admin\Plan\Services\PlanService;
@@ -31,12 +32,26 @@ class PlanController extends ApiController
 
     public function store(PlanRequest $request)
     {
-        PlanService::storePlan($request);
+        $plan =  PlanService::storePlan($request);
+
+        return $this->sendResponse(
+            PlanResource::make($plan),
+            __('Data fetched successfully'),
+            StatusCodeEnum::Success->value
+        );
     }
 
     public function show($id)
     {
-        $plan = $this->planService->getPlan($id);
+        // $plan = $this->planService->getPlan($id);
+        $plan = DB::connection('admin')->table('plans')->where('id', 4)->first();
+
+        $permissions = json_decode($plan->permissions, true);
+
+        foreach ($permissions as $permission) {
+
+            dd($permission['title']);
+        }
 
         return $this->sendResponse(
             PlanResource::make($plan),

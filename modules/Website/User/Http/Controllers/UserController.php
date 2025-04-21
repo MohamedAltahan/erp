@@ -39,17 +39,18 @@ class UserController extends ApiController
         $user = $this->userService->create($request);
 
         $tenant = Tenant::create([
-            'tenancy_db_name' => 'erp-'.$request->subdomain,
+            'tenancy_db_name' => 'erp-' . $request->domain,
             'user_id' => $user->id,
             'company_name' => $request->company_name,
-            'subdomain' => $request->subdomain,
+            'domain' => $request->domain,
             'is_active' => 1,
             'version' => 1,
             'creating_status' => 1,
+            'plan_id' => 1,
         ]);
 
         $tenant->domains()->create([
-            'domain' => $request->subdomain,
+            'domain' => $request->domain,
         ]);
 
         return $this->sendResponse(

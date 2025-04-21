@@ -15,5 +15,6 @@ class TenantPermission extends BaseModel
 
     protected $casts = [
         'title' => 'array',
+        'permissions' => 'array',
     ];
 }

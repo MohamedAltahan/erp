@@ -31,7 +31,7 @@ class User extends Authenticatable
         'address',
         'status',
         'company_name',
-        'subdomain',
+        'domain',
     ];
 
     protected $casts = [

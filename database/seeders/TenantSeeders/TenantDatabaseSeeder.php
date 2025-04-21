@@ -5,6 +5,7 @@ namespace Database\Seeders\TenantSeeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Contracts\Permission;
 
 class TenantDatabaseSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class TenantDatabaseSeeder extends Seeder
     {
         $this->call(
             [
+                PermissionsSeeder::class,
                 AccountTreeSeeder::class,
                 BranchSeeder::class,
                 UserSeeder::class,
