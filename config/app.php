@@ -12,7 +12,7 @@ return [
 
     'timezone' => 'UTC',
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'ar'),
 
     'supported_languages' => ['en', 'ar'],
 

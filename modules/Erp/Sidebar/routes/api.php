@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Erp\AccountTree\Http\Controllers\AccountTreeController;
+use Modules\Erp\Sidebar\Http\Controllers\SidebarController;
 
 Route::prefix('v1')->group(function () {
-    Route::apiResource('account-tree', AccountTreeController::class)->names('account-tree');
+    Route::apiResource('sidebar', SidebarController::class)->names('sidebar');
 });

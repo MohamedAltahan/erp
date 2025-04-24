@@ -11,6 +11,7 @@ class ModuleRegistry
             'Branch',
             'AccountTree',
             'User',
+            'Sidebar',
         ];
     }
 

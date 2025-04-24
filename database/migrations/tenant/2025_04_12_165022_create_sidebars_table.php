@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->boolean('is_active')->default(1);
             $table->integer('order')->default(0);
+            $table->json('permissions')->nullable()->comment(' e.g. ["view users", "edit users"]');
             $table->timestamps();
         });
     }
