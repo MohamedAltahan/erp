@@ -4,7 +4,6 @@ namespace Modules\Admin\Plan\Services;
 
 use Illuminate\Support\Facades\DB;
 use Modules\Admin\Plan\Models\Plan;
-use Modules\Admin\Tenant\Models\Tenant;
 use Modules\Admin\TenantPermission\Models\TenantPermission;
 use Modules\Admin\TenantSidebar\Models\TenantSidebar;
 use Modules\Common\Traits\Filterable;
@@ -23,7 +22,6 @@ class PlanService
 
             dd($sidebarItem['name']);
         }
-
 
         $plans = Plan::paginate($perPage);
 

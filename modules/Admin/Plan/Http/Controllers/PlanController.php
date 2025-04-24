@@ -2,7 +2,6 @@
 
 namespace Modules\Admin\Plan\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Modules\Admin\Plan\Http\Requests\PlanRequest;
 use Modules\Admin\Plan\Resources\PlanResource;
 use Modules\Admin\Plan\Services\PlanService;
@@ -32,7 +31,7 @@ class PlanController extends ApiController
 
     public function store(PlanRequest $request)
     {
-        $plan =  PlanService::storePlan($request);
+        $plan = PlanService::storePlan($request);
 
         return $this->sendResponse(
             PlanResource::make($plan),

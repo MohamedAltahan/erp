@@ -2,12 +2,12 @@
 
 namespace Modules\Erp\Sidebar\Models;
 
-use Kalnoy\Nestedset\NodeTrait;
 use Modules\Common\Models\BaseModel;
 
 class Sidebar extends BaseModel
 {
     public $translatable = ['name'];
+
     protected $guarded = [];
     // protected $fillable = [];
 

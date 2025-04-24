@@ -4,7 +4,6 @@ namespace Database\Seeders\TenantSeeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Modules\Common\Enums\GuardEnum;
 
 class PermissionsSeeder extends Seeder
@@ -20,7 +19,7 @@ class PermissionsSeeder extends Seeder
         $sidebarItems = json_decode($plan->sidebar_items, true);
         $limits = json_decode($plan->limits, true);
 
-        //seed permissions
+        // seed permissions
         foreach ($permissions as $permission) {
             // Insert into tenant's DB (you're already in tenant context when this seeder runs)
             DB::table('permissions')->insert([
@@ -33,7 +32,7 @@ class PermissionsSeeder extends Seeder
             ]);
         }
 
-        //seed sidebar items
+        // seed sidebar items
         foreach ($sidebarItems as $sidebarItem) {
             DB::table('sidebars')->insert([
                 'name' => json_encode($sidebarItem['name']),
@@ -48,7 +47,7 @@ class PermissionsSeeder extends Seeder
             ]);
         }
 
-        //seed limits
+        // seed limits
         foreach ($limits as $resource => $limit) {
             DB::table('tenant_limits')->insert([
                 'resource_type' => $resource,

@@ -2,11 +2,9 @@
 
 namespace Modules\Website\User\Services;
 
-use Illuminate\Database\Eloquent\Casts\Json;
 use Modules\Common\Enums\ImageQuality;
 use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Filters\Common\JsonNameSearch;
-use Modules\Common\Filters\Search;
 use Modules\Common\Traits\UploadFile;
 use Modules\Website\User\Http\Requests\UserRequest;
 use Modules\Website\User\Models\User;

@@ -23,7 +23,6 @@ class Plan extends BaseModel
         'plan_id',
     ];
 
-
     protected $casts = [
         'features' => 'array',
         'limits' => 'array',
