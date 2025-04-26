@@ -16,6 +16,8 @@ class UserController extends ApiController
 
     protected $userService;
 
+    public static ?string $model = User::class;
+
     public function __construct(UserService $userService)
     {
         parent::__construct();

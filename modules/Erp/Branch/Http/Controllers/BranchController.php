@@ -2,7 +2,10 @@
 
 namespace Modules\Erp\Branch\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Modules\Common\Enums\StatusCodeEnum;
+use Modules\Common\Enums\UserRoleEnum;
 use Modules\Common\Http\Controllers\ApiController;
 use Modules\Common\Traits\ApiResponse;
 use Modules\Erp\Branch\Http\Requests\BranchRequest;
@@ -14,12 +17,11 @@ class BranchController extends ApiController
 {
     use ApiResponse;
 
-    protected $branchService;
+    public static ?string $model = Branch::class;
 
-    public function __construct(BranchService $branchService)
+    public function __construct(protected BranchService $branchService)
     {
         parent::__construct();
-        $this->branchService = $branchService;
     }
 
     public function index()
@@ -46,6 +48,14 @@ class BranchController extends ApiController
 
     public function show(Branch $branch)
     {
+        // $this->authorize('view', $branch);
+
+        // $this->user = Auth::user();
+
+        if (static::$model && (Auth::user()?->role != UserRoleEnum::SuperAdmin->value)) {
+            $this->authorizeResource(static::$model, Str::snake(class_basename(static::$model)));
+        }
+
         return $this->sendResponse(
             BranchResource::make($branch),
             __('Data fetched successfully'),

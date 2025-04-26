@@ -32,6 +32,9 @@
         "phpunit/phpunit": "^11.5.3"
     },
     "autoload": {
+        "files": [
+            "app/Helpers/helpers.php"
+        ],
         "psr-4": {
             "Modules\\Erp\\": "modules/Erp/",
             "Modules\\Admin\\": "modules/Admin/",

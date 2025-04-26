@@ -12,6 +12,7 @@ class ModuleRegistry
             'AccountTree',
             'User',
             'Sidebar',
+            'Permission',
         ];
     }
 
@@ -31,6 +32,7 @@ class ModuleRegistry
             'TenantSidebar',
             'TenantPermission',
             'Plan',
+
         ];
     }
 }

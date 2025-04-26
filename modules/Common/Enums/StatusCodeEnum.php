@@ -12,4 +12,5 @@ enum StatusCodeEnum: int
     case Forbidden = 403;
     case Not_Found = 404;
     case Server_Error = 500;
+    case CONFlICT = 409;
 }

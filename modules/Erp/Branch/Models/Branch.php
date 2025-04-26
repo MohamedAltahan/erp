@@ -3,9 +3,12 @@
 namespace Modules\Erp\Branch\Models;
 
 use Modules\Common\Models\BaseModel;
+use Modules\Common\Traits\HasLocalizedName;
 
 class Branch extends BaseModel
 {
+    use HasLocalizedName;
+
     public $timestamps = false;
 
     protected $translatable = ['description', 'address'];
@@ -16,6 +19,5 @@ class Branch extends BaseModel
         'name' => 'array',
         'description' => 'array',
         'address' => 'array',
-
     ];
 }

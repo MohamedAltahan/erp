@@ -35,7 +35,7 @@ class PlanController extends ApiController
 
         return $this->sendResponse(
             PlanResource::make($plan),
-            __('Data fetched successfully'),
+            __('Data created successfully'),
             StatusCodeEnum::Success->value
         );
     }

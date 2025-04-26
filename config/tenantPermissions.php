@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'view' => [
+    'view_any' => [
+        'branch',
         'inventory',
         'sale',
         'order',
@@ -9,7 +10,8 @@ return [
         'invoice',
         'report',
     ],
-    'view_any' => [
+    'view' => [
+        'branch',
         'inventory',
         'sale',
         'order',
@@ -18,6 +20,7 @@ return [
         'report',
     ],
     'create' => [
+        'branch',
         'sale',
         'order',
         'customer',
@@ -25,6 +28,7 @@ return [
         'inventory',
     ],
     'edit' => [
+        'branch',
         'sale',
         'order',
         'customer',
@@ -32,6 +36,7 @@ return [
         'invoice',
     ],
     'delete' => [
+        'branch',
         'sale',
         'order',
         'customer',

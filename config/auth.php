@@ -3,7 +3,7 @@
 return [
 
     'defaults' => [
-        'guard' => 'erp_session',
+        'guard' => 'erp',
         'passwords' => 'erp',
     ],
 
